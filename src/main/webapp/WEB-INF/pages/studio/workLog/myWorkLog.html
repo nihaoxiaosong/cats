@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的工作日志</title>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../../../plugin/bootstrap/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="../../../plugin/bootstrap/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="../../../plugin/jquery/jquery-1.12.3.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="../../../plugin/bootstrap/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="../../../css/stimeAxis.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="page-header">
+					<h1>工作室管理平台 <small>浙江衡信教育科技有限公司</small></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-pills ">
+						<li role="">
+							<a href="../attendance/myAttendance.html">考勤</a>
+						</li>
+						<li role="">
+							<a href="../mission/myMission.html">任务</a>
+						</li>
+						<li role="" class="active">
+							<a href="../workLog/myWorkLog.html">工作日志</a>
+						</li>
+						<li role="">
+							<a href="#">代账企业信息</a>
+						</li>
+						<li role="">
+							<a href="#">综合素质评价</a>
+						</li>
+						<li role="">
+							<a href="#">报表统计</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 50px;">
+				<div class="col-md-2">
+					<div class="list-group">
+						<a href="#" class="list-group-item active"><span class="glyphicon glyphicon-edit"></span> 工作日志</a>
+						<a href="#" class="list-group-item list-group-item-info" style="text-align:center">我的工作日志</a>
+						<a href="#" class="list-group-item" style="text-align:center">他人工作日志</a>
+						<a href="#" class="list-group-item" style="text-align:center">未读工作日志</a>
+						<a href="#" class="list-group-item" style="text-align:center">评论我的</a>
+						<a href="#" class="list-group-item" style="text-align:center">工作日志统计</a>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div>
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<label for="">日期:</label>
+							</div>
+							<div class="form-group">
+								<input class="form-control" type="text" placeholder="选择时间">
+							</div>
+							<div class="form-group">
+								<input type="button" class="form-control" id="" value="查询">
+							</div>
+						</form>
+					</div>
+					<div style="margin-top: 50px;">
+						<section id="cd-timeline" class="cd-container">
+							<div class="cd-timeline-block">
+								<div class="cd-timeline-img cd-picture">
+									<img src="../../../img/cd-icon-picture.svg" alt="Picture">
+								</div>
+
+								<div class="cd-timeline-content">
+									<h2>张三</h2>
+									<div>
+										<table class="table table-bordered">
+											<tr><td>序号</td><td>工作类别</td><td>工作内容</td><td>问题及建议</td></tr>
+											<tr><td>1</td><td>整理原始凭证</td><td>整理并粘贴了30张凭证</td><td></td></tr>
+										</table>
+									</div>
+									<input type="button" class="form-control" value="添加" style="width: 50px;">
+									<span class="cd-date">2016-10-27</span>
+								</div>
+							</div>
+							<div class="cd-timeline-block">
+								<div class="cd-timeline-img cd-picture">
+									<img src="../../../img/cd-icon-picture.svg" alt="Picture">
+								</div>
+
+								<div class="cd-timeline-content">
+									<h2>张三</h2>
+									<div>
+										<table class="table table-bordered">
+											<tr><td>序号</td><td>工作类别</td><td>工作内容</td><td>问题及建议</td></tr>
+											<tr><td>1</td><td>整理原始凭证</td><td>整理并粘贴了30张凭证</td><td></td></tr>
+											<tr><td>2</td><td>外出取原始票据</td><td>去A公司取30张凭证</td><td></td></tr>
+										</table>
+									</div>
+									<span class="cd-date">2016-10-26</span>
+								</div>
+							</div>
+							<div class="cd-timeline-block">
+								<div class="cd-timeline-img cd-picture">
+									<img src="../../../img/cd-icon-picture.svg" alt="Picture">
+								</div>
+
+								<div class="cd-timeline-content">
+									<h2>张三</h2>
+									<p>无日报内容</p>
+									<input type="button" class="form-control" value="补交" style="width: 50px;">
+									<span class="cd-date">2016-10-25</span>
+								</div>
+							</div>
+							<div class="cd-timeline-block">
+								<div class="cd-timeline-img cd-picture">
+									<img src="../../../img/cd-icon-picture.svg" alt="Picture">
+								</div>
+
+								<div class="cd-timeline-content">
+									<h2>张三</h2>
+									<div>
+										<table class="table table-bordered">
+											<tr><td>序号</td><td>工作类别</td><td>工作内容</td><td>问题及建议</td></tr>
+											<tr><td>1</td><td>整理原始凭证</td><td>整理并粘贴了30张凭证</td><td></td></tr>
+											<tr><td>2</td><td>外出取原始票据</td><td>去A公司取30张凭证</td><td></td></tr>
+										</table>
+									</div>
+									<span class="cd-date">2016-10-24</span>
+								</div>
+							</div>
+							<div class="cd-timeline-block">
+								<div class="cd-timeline-img cd-picture">
+									<img src="../../../img/cd-icon-picture.svg" alt="Picture">
+								</div>
+
+								<div class="cd-timeline-content">
+									<h2>张三</h2>
+									<div>
+										<table class="table table-bordered">
+											<tr><td>序号</td><td>工作类别</td><td>工作内容</td><td>问题及建议</td></tr>
+											<tr><td>1</td><td>整理原始凭证</td><td>整理并粘贴了30张凭证</td><td></td></tr>
+											<tr><td>2</td><td>外出取原始票据</td><td>去A公司取30张凭证</td><td></td></tr>
+										</table>
+									</div>
+									<span class="cd-date">2016-10-23</span>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>
