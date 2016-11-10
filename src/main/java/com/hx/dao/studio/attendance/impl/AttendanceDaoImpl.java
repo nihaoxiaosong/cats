@@ -17,21 +17,21 @@ public class AttendanceDaoImpl extends BaseDao implements AttendanceDao {
 
 	@Override
 	public void insert(Attendance attendance) {
-		mongoTemplate.insert(attendance);
+		catsMongoTemplate.insert(attendance);
 	}
 
 	@Override
 	public List<Attendance> getByTime(String studentCode, Date startTime, Date endTime) {
 		Query query = new Query();
 		query.addCriteria(new Criteria("studentCode").is(studentCode).and("attendanceTime").gt(startTime).lt(endTime));
-		return mongoTemplate.find(query, Attendance.class);
+		return catsMongoTemplate.find(query, Attendance.class);
 	}
 
 	@Override
 	public Attendance getByType(String studentCode, AttendanceType type) {
 		Query query = new Query();
 		query.addCriteria(new Criteria("studentCode").is(studentCode).and("attendanceType").is(type.toString()));
-		return mongoTemplate.findOne(query, Attendance.class);
+		return catsMongoTemplate.findOne(query, Attendance.class);
 	}
 
 }

@@ -10,7 +10,7 @@ import com.hx.controller.base.BaseController;
 @RequestMapping(value = "/attendance")
 public class AttendanceController extends BaseController {
 	
-	@RequestMapping("/attendanceInfo")
+	@RequestMapping("/info")
 	public ModelAndView attendanceInfo(){
 		ModelAndView mav = new ModelAndView();
 //		mav.addObject("user",user);

@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
  */
 public class BaseDao {
 	@Autowired
-	protected MongoTemplate mongoTemplate;
+	protected MongoTemplate catsMongoTemplate;
+	@Autowired
+	protected MongoTemplate cmacMongoTemplate;
 
 }
