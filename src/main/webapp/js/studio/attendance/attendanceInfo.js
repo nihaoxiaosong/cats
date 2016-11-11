@@ -1,0 +1,15 @@
+$(function(){
+	$("#sign").click(function(){
+		$.post(
+			"sign",
+			{
+				"studioCode":"abc",
+				"studioName":"衡信工作室",
+				"studentCode":"zhangsan",
+				"studentName":"张三",
+			},
+			function(data){
+			}
+		);
+	});
+});

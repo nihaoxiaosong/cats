@@ -77,7 +77,7 @@
 								<div class="input-group">
 									<label type="text" class="form-control">2016-10-25 20:40:29</label>
 									<div class="input-group-btn">
-										<button type="button" class="btn btn-danger">签到</button>
+										<button type="button" id="sign" class="btn btn-danger">签到</button>
 									</div>
 								</div>
 							</div>
@@ -248,4 +248,5 @@
 	
 	<script src="<@s.url '/plugin/jquery/jquery-1.12.3.min.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/plugin/bootstrap/js/bootstrap.min.js'/>" type="text/javascript"></script>
+	<script src="<@s.url '/js/studio/attendance/attendanceInfo.js'/>" type="text/javascript"></script>
 </html>
