@@ -75,7 +75,7 @@
 							
 							<div class="form-group" style="float:right;">
 								<div class="input-group">
-									<label type="text" class="form-control">2016-10-25 20:40:29</label>
+									<label type="text" class="form-control" id="nowTime"></label>
 									<div class="input-group-btn">
 										<button type="button" id="sign" class="btn btn-danger">签到</button>
 									</div>
@@ -90,153 +90,36 @@
 								<td>序号</td>
 								<td>姓名</td>
 								<td>考勤类型</td>
-								<td>考勤日期</td>
 								<td>考勤时间</td>
 								<td>ip地址</td>
-								<td>考勤信息</td>
+								<td>考勤状态</td>
+								<td>申诉状态</td>
 							</tr>
-							<tr>
-								<td>1</td>
-								<td>张三</td>
-								<td>签到</td>
-								<td>2016-10-25</td>
-								<td>09:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label style="margin-right: 30px;">异常</label>
-									<input type="button" class="btn btn-warning" value="申诉" />
-								</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>张三</td>
-								<td>签退</td>
-								<td>2016-10-25</td>
-								<td>18:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label style="margin-right: 30px;">异常</label>
-									<a href="#">申诉处理结果:处理中</a>
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>张三</td>
-								<td>签到</td>
-								<td>2016-10-25</td>
-								<td>09:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label style="margin-right: 30px;">异常</label>
-									<a href="#">申诉处理结果:通过</a>
-								</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>张三</td>
-								<td>签退</td>
-								<td>2016-10-25</td>
-								<td>18:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label style="margin-right: 30px;">异常</label>
-									<a href="#">申诉处理结果:退回</a>
-								</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>张三</td>
-								<td>签到</td>
-								<td>2016-10-25</td>
-								<td>09:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label style="margin-right: 30px;">加班</label>
-									<input type="button" class="btn btn-warning" value="加班申请" />
-								</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>张三</td>
-								<td>签退</td>
-								<td>2016-10-25</td>
-								<td>18:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label style="margin-right: 30px;">加班</label>
-									<a href="#">申请处理结果:处理中</a>
-								</td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td>张三</td>
-								<td>签到</td>
-								<td>2016-10-25</td>
-								<td>09:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label>正常</label>
-								</td>
-							</tr>
-							<tr>
-								<td>8</td>
-								<td>张三</td>
-								<td>签退</td>
-								<td>2016-10-25</td>
-								<td>18:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label>正常</label>
-								</td>
-							</tr>
-							<tr>
-								<td>9</td>
-								<td>张三</td>
-								<td>签到</td>
-								<td>2016-10-25</td>
-								<td>09:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label>正常</label>
-								</td>
-							</tr>
-							<tr>
-								<td>10</td>
-								<td>张三</td>
-								<td>签退</td>
-								<td>2016-10-25</td>
-								<td>18:00</td>
-								<td>192.168.0.1</td>
-								<td>
-									<label>正常</label>
-								</td>
-							</tr>
+							<#if attendanceList?exists && (attendanceList?size>0)>
+								<#list attendanceList as attendance>
+									<tr style="height:50px;">
+										<td>${attendance_index+1}</td>
+										<td>${attendance.studentName!}</td>
+										<td>${attendance.signType.des!}</td>
+										<td>${(attendance.attendanceTime)?string("yyyy-MM-dd HH:mm:ss")}</td>
+										<td>${attendance.ipAddress!}</td>
+										<td>${attendance.attendanceType.des!}</td>
+										<#if attendance.attendanceType?exists && attendance.attendanceType!="NORMAL">
+											<td>
+												<input type="button" class="btn btn-warning" value="${attendance.appealStatus.des!}" />
+											</td>
+										<#else>
+											<td></td>
+										</#if>
+									</tr>
+								</#list>
+							</#if>
 						</table>
 					</div>
 					<div style="float: right;">
 						<nav>
 							<ul class="pagination">
-								<li>
-									<a href="#">&laquo;</a>
-								</li>
-								<li class="active">
-									<a href="#">1</a>
-								</li>
-								<li>
-									<a href="#">2</a>
-								</li>
-								<li>
-									<a href="#">3</a>
-								</li>
-								<li>
-									<a href="#">4</a>
-								</li>
-								<li>
-									<a href="#">5</a>
-								</li>
-								<li>
-									<a href="#">&raquo;</a>
-								</li>
+								${pageCode!}
 							</ul>
 						</nav>
 					</div>
@@ -248,5 +131,5 @@
 	
 	<script src="<@s.url '/plugin/jquery/jquery-1.12.3.min.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/plugin/bootstrap/js/bootstrap.min.js'/>" type="text/javascript"></script>
-	<script src="<@s.url '/js/studio/attendance/attendanceInfo.js'/>" type="text/javascript"></script>
+	<script src="<@s.url '/js/studio/attendance/info.js'/>" type="text/javascript"></script>
 </html>

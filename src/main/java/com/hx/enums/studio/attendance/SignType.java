@@ -1,9 +1,13 @@
 package com.hx.enums.studio.attendance;
 
-public enum AttendanceType {
-	NORMAL(0,"正常"),
-	OVERTIME(1,"加班"),
-	UNNORMAL(2,"异常");
+/**
+ * 考勤类型枚举类
+ * @author song
+ * @date 2016年11月14日下午8:33:45
+ */
+public enum SignType {
+	SIGN_IN(0,"签到"),
+	SIGN_OUT(1,"签退");
 	
 	/**
 	 * 值
@@ -26,7 +30,7 @@ public enum AttendanceType {
 	 * @param value
 	 * @param des
 	 */
-	private AttendanceType(int value, String des) {
+	private SignType(int value, String des) {
 		this.value = value;
 		this.des = des;
 	}
@@ -36,15 +40,15 @@ public enum AttendanceType {
 	 * @param value
 	 * @return
 	 */
-	public static AttendanceType getByValue(int value) {
+	public static SignType getByValue(int value) {
 		if (value == 0) {
-			return AttendanceType.NORMAL;
+			return SignType.SIGN_IN;
 		} else if (value == 1) {
-			return AttendanceType.OVERTIME;
-		} else if (value == 2) {
-			return AttendanceType.UNNORMAL;
-		}else {
-			return AttendanceType.NORMAL;
+			return SignType.SIGN_OUT;
+		} else {
+			return SignType.SIGN_IN;
 		}
 	}
+	
+	
 }

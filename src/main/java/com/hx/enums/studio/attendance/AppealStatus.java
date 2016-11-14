@@ -3,14 +3,13 @@ package com.hx.enums.studio.attendance;
 /**
  * 考勤状态枚举类
  * @author song
- *
+ * @date 2016年11月14日下午8:33:37
  */
-public enum AttendanceStatus {
-	NORMAL(0,"正常"),
-	UNAPPEAL(1,"未申诉"),
-	APPEALING(2,"申诉处理中"),
-	APPEALBACK(3,"申诉退回"),
-	APPEALSUCCESS(4,"申诉通过");
+public enum AppealStatus {
+	UNAPPEAL(0,"未申诉"),
+	APPEALING(1,"申诉处理中"),
+	APPEALSUCCESS(2,"申诉通过"),
+	APPEALBACK(3,"申诉退回");
 	
 	/**
 	 * 值
@@ -33,7 +32,7 @@ public enum AttendanceStatus {
 	 * @param value
 	 * @param des
 	 */
-	private AttendanceStatus(int value, String des) {
+	private AppealStatus(int value, String des) {
 		this.value = value;
 		this.des = des;
 	}
@@ -43,19 +42,17 @@ public enum AttendanceStatus {
 	 * @param value
 	 * @return
 	 */
-	public static AttendanceStatus getByValue(int value) {
+	public static AppealStatus getByValue(int value) {
 		if (value == 0) {
-			return AttendanceStatus.NORMAL;
+			return AppealStatus.UNAPPEAL;
 		} else if (value == 1) {
-			return AttendanceStatus.UNAPPEAL;
+			return AppealStatus.APPEALING;
 		} else if (value == 2) {
-			return AttendanceStatus.APPEALING;
+			return AppealStatus.APPEALSUCCESS;
 		} else if (value == 3) {
-			return AttendanceStatus.APPEALBACK;
-		} else if (value == 4) {
-			return AttendanceStatus.APPEALSUCCESS;
+			return AppealStatus.APPEALBACK;
 		} else {
-			return AttendanceStatus.NORMAL;
+			return AppealStatus.UNAPPEAL;
 		}
 	}
 }

@@ -2,9 +2,8 @@ package com.hx.util;
 
 /**
  * 分页工具类
- * 
  * @author song
- *
+ * @date 2016年11月14日下午8:34:14
  */
 public class PageUtils {
 	/**

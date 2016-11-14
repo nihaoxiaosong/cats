@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.hx.dao.studio.attendance.AttendanceDao;
+import com.hx.entity.base.PageBean;
 import com.hx.entity.studio.attendance.Attendance;
 import com.hx.enums.studio.attendance.AttendanceType;
 
@@ -23,13 +24,18 @@ public class AttendanceServiceImpl implements AttendanceService {
 	}
 
 	@Override
-	public List<Attendance> getByTime(String studentCode, Date startTime, Date endTime) {
-		return attendanceDao.getByTime(studentCode, startTime, endTime);
+	public Attendance getByType(String studentCode, AttendanceType type) {
+		return attendanceDao.getByType(studentCode, type);
 	}
 
 	@Override
-	public Attendance getByType(String studentCode, AttendanceType type) {
-		return attendanceDao.getByType(studentCode, type);
+	public List<Attendance> list(String studioCode, String studentCode, PageBean pageBean, Date startTime, Date endTime) {
+ 		return attendanceDao.list(studioCode, studentCode, pageBean, startTime, endTime);
+	}
+
+	@Override
+	public int count(String studioCode, String studentCode, Date startTime, Date endTime) {
+		return attendanceDao.count(studioCode, studentCode, startTime, endTime);
 	}
 
 }
