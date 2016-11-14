@@ -27,4 +27,5 @@ public interface AttendanceDao {
 	 * @return
 	 */
 	Attendance getByType(String studentCode, AttendanceType type);
+	
 }
