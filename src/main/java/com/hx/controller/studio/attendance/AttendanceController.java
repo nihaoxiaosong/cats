@@ -53,6 +53,8 @@ public class AttendanceController extends BaseController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("attendanceList", list);
 		mav.addObject("pageCode", pageCode);
+		mav.addObject("startTime", startTime);
+		mav.addObject("endTime", endTime);
 		mav.setViewName("/studio/attendance/info");
 		return mav;
 	}

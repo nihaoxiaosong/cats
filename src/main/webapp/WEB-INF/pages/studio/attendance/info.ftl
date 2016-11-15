@@ -18,6 +18,23 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
+				<#--
+					<nav class="navbar navbar-inverse" role="navigation">
+						<div class="container">
+				        	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+								<ul class="nav navbar-nav">
+						            <li class="active"><a href="../attendance/myAttendance.html">考勤</a></li>
+						            <li><a href="../mission/myMission.html">任务</a></li>
+						            <li><a href="../workLog/myWorkLog.html">工作日志</a></li>
+						            <li><a href="#">代账企业信息</a></li>
+						            <li><a href="#">综合素质评价</a></li>
+						            <li><a href="#">报表统计</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				-->
+				
 					<ul class="nav nav-pills ">
 						<li role="" class="active">
 							<a href="../attendance/myAttendance.html">考勤</a>
@@ -61,16 +78,16 @@
 								<label for="">时间:</label>
 							</div>
 							<div class="form-group">
-								<input style="width:180px;" class="form-control" type="text" placeholder="开始时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});">
+								<input style="width:180px;" class="form-control" type="text" id="startTime" value="${startTime!}" placeholder="开始时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});">
 							</div>
 								<label for="">-</label>
 							<div class="form-group">
-								<input style="width:180px;" class="form-control" type=" text" id="" placeholder="结束时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});">
+								<input style="width:180px;" class="form-control" type=" text" id="endTime" value="${endTime!}" placeholder="结束时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});">
 							</div>
 							<div class="form-group">
-								<input type="button" class="form-control btn btn-info" id="" value="本月">
-								<input type="button" class="form-control btn btn-info" id="" value="上月">
-								<input type="button" class="form-control btn btn-primary" id="" value="查询">
+								<input type="button" class="form-control btn btn-info" id="thisMonth" value="本月">
+								<input type="button" class="form-control btn btn-info" id="lastMonth" value="上月">
+								<input type="button" class="form-control btn btn-primary" id="query" value="查询">
 							</div>
 							
 							<div class="form-group" style="float:right;">
@@ -132,5 +149,6 @@
 	<script src="<@s.url '/plugin/jquery/jquery-1.12.3.min.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/plugin/bootstrap/js/bootstrap.min.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/plugin/My97DatePicker/WdatePicker.js'/>" type="text/javascript"></script>
+	<script src="<@s.url '/js/common/date.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/js/studio/attendance/info.js'/>" type="text/javascript"></script>
 </html>
