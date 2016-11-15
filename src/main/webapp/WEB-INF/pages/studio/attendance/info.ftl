@@ -61,11 +61,11 @@
 								<label for="">时间:</label>
 							</div>
 							<div class="form-group">
-								<input style="width:150px;" class="form-control" type="text" placeholder="开始时间">
+								<input style="width:180px;" class="form-control" type="text" placeholder="开始时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});">
 							</div>
 								<label for="">-</label>
 							<div class="form-group">
-								<input style="width:150px;" class="form-control" type=" text" id="" placeholder="结束时间">
+								<input style="width:180px;" class="form-control" type=" text" id="" placeholder="结束时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});">
 							</div>
 							<div class="form-group">
 								<input type="button" class="form-control btn btn-info" id="" value="本月">
@@ -97,7 +97,7 @@
 							</tr>
 							<#if attendanceList?exists && (attendanceList?size>0)>
 								<#list attendanceList as attendance>
-									<tr style="height:50px;">
+									<tr>
 										<td>${attendance_index+1}</td>
 										<td>${attendance.studentName!}</td>
 										<td>${attendance.signType.des!}</td>
@@ -131,5 +131,6 @@
 	
 	<script src="<@s.url '/plugin/jquery/jquery-1.12.3.min.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/plugin/bootstrap/js/bootstrap.min.js'/>" type="text/javascript"></script>
+	<script src="<@s.url '/plugin/My97DatePicker/WdatePicker.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/js/studio/attendance/info.js'/>" type="text/javascript"></script>
 </html>

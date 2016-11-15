@@ -69,8 +69,8 @@ public class AttendanceController extends BaseController {
 		attendance.setAttendanceTime(new Date());
 		attendance.setIpAddress("127.0.0.1");
 		attendance.setAppealStatus(null);
-		attendance.setAttendanceType(AttendanceType.NORMAL);
-		attendance.setAppealStatus(null);
+		attendance.setAttendanceType(AttendanceType.UNNORMAL);
+		attendance.setAppealStatus(AppealStatus.UNAPPEAL);
 		attendanceService.insert(attendance);
 		JSONObject jsonObject = new JSONObject();
 		return jsonObject;
