@@ -33,20 +33,19 @@ public class AttendanceDaoImpl extends BaseDao implements AttendanceDao {
 	public List<Attendance> list(String studioCode, String studentCode, PageBean pageBean, Date startTime,
 			Date endTime) {
 		Query query = new Query();
-		Criteria criteria = new Criteria();
 		if(!StringUtils.isEmpty(studioCode)){
-			criteria.and("studioCode").is(studioCode);
+	        query.addCriteria(new Criteria("studioCode").is(studioCode));
 		}
 		if(!StringUtils.isEmpty(studentCode)){
-			criteria.and("studioCode").is(studentCode);
+			query.addCriteria(new Criteria("studentCode").is(studentCode));
 		}
-		if(startTime != null){
-			criteria.and("attendanceTime").gte(startTime);
+		if(startTime != null && endTime != null){
+			query.addCriteria(new Criteria("attendanceTime").gte(startTime).lt(endTime));
+		}else if(startTime == null && endTime != null){
+			query.addCriteria(new Criteria("attendanceTime").lt(endTime));
+		}else if(startTime != null && endTime == null){
+			query.addCriteria(new Criteria("attendanceTime").gte(startTime));
 		}
-		if(endTime != null){
-			criteria.and("attendanceTime").lte(endTime);
-		}
-		query.addCriteria(criteria);
 		query.skip(pageBean.getStart()).limit(pageBean.getPageSize());
 		return catsMongoTemplate.find(query, Attendance.class);
 	}
@@ -54,20 +53,19 @@ public class AttendanceDaoImpl extends BaseDao implements AttendanceDao {
 	@Override
 	public int count(String studioCode, String studentCode, Date startTime, Date endTime) {
 		Query query = new Query();
-		Criteria criteria = new Criteria();
 		if(!StringUtils.isEmpty(studioCode)){
-			criteria.and("studioCode").is(studioCode);
+	        query.addCriteria(new Criteria("studioCode").is(studioCode));
 		}
 		if(!StringUtils.isEmpty(studentCode)){
-			criteria.and("studioCode").is(studentCode);
+			query.addCriteria(new Criteria("studentCode").is(studentCode));
 		}
-		if(startTime != null){
-			criteria.and("attendanceTime").gte(startTime);
+		if(startTime != null && endTime != null){
+			query.addCriteria(new Criteria("attendanceTime").gte(startTime).lt(endTime));
+		}else if(startTime == null && endTime != null){
+			query.addCriteria(new Criteria("attendanceTime").lt(endTime));
+		}else if(startTime != null && endTime == null){
+			query.addCriteria(new Criteria("attendanceTime").gte(startTime));
 		}
-		if(endTime != null){
-			criteria.and("attendanceTime").lte(endTime);
-		}
-		query.addCriteria(criteria);
 		return (int) catsMongoTemplate.count(query, Attendance.class);
 	}
 
