@@ -14,7 +14,7 @@ import com.hx.entity.base.PageBean;
 import com.hx.entity.studio.attendance.Attendance;
 import com.hx.enums.studio.attendance.AttendanceType;
 
-@Repository("attendanceDaoImpl")
+@Repository("attendanceDao")
 public class AttendanceDaoImpl extends BaseDao implements AttendanceDao {
 
 	@Override

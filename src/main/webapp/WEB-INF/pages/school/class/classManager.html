@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>班级管理</title>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../../../plugin/bootstrap/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="../../../plugin/bootstrap/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="../../../plugin/jquery/jquery-1.12.3.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="../../../plugin/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="page-header">
+					<h1>学校管理后台 <small>浙江衡信教育科技有限公司</small></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-pills ">
+						<li role="" class="active">
+							<a href="#">班级管理</a>
+						</li>
+						<li role="">
+							<a href="#">学生管理</a>
+						</li>
+						<li role="">
+							<a href="#">成绩管理</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+				
+			<div class="row">
+				<form class="form-inline" role="form" style="margin-top: 40px;">
+					<div class="form-group" style="margin-right: 20px;">
+						<label for="">班级名称:</label>
+						<input class="form-control" type="text" placeholder="请输入班级名称">
+					</div>
+					<div class="form-group" style="margin-right: 20px;">
+						<label for="">入学年份:</label>
+						<select class="form-control">
+							<option>请选择入学年份</option>
+							<option>2016</option>
+							<option>2015</option>
+							<option>2014</option>
+							<option>2013</option>
+							<option>2012</option>
+						</select>
+					</div>
+					<div class="form-group" style="margin-right: 20px;">
+						<label for="">状态:</label>
+						<select class="form-control">
+							<option>请选择状态</option>
+							<option>启用</option>
+							<option>停用</option>
+						</select>
+					</div>
+					<div class="form-group" style="margin-right: 20px;">
+						<input type="button" class="form-control btn-primary" id="" value="查询">
+					</div>
+				</form>
+			</div>
+			
+			<div class="row">
+				<div style="margin-top: 40px;">
+					<input type="button" class="btn btn-info" value="新增" />
+				</div>
+				<table class="table table-bordered table-hover" style="text-align:center;margin-top: 20px;">
+					<tr class="active">
+						<td>序号</td>
+						<td>班级名称</td>
+						<td>入学年份</td>
+						<td>人数</td>
+						<td>状态</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>会计15级1班</td>
+						<td>2015</td>
+						<td>35</td>
+						<td>启用</td>
+						<td>
+							<a href="#">修改</a>
+							<a href="#">学生管理</a>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>会计15级2班</td>
+						<td>2015</td>
+						<td>40</td>
+						<td>停用</td>
+						<td>
+							<a href="#">修改</a>
+							<a href="#">学生管理</a>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>会计15级3班</td>
+						<td>2015</td>
+						<td>40</td>
+						<td>停用</td>
+						<td>
+							<a href="#">修改</a>
+							<a href="#">学生管理</a>
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>会计15级2班</td>
+						<td>2015</td>
+						<td>40</td>
+						<td>停用</td>
+						<td>
+							<a href="#">修改</a>
+							<a href="#">学生管理</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+	</body>
+</html>

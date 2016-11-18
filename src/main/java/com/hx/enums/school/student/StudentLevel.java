@@ -1,14 +1,14 @@
-package com.hx.enums.studio.attendance;
+package com.hx.enums.school.student;
 
 /**
- * 考勤类型
+ * 学生级别
  * 
  * @author song
  * @date 2016年11月18日下午2:33:25
+ *
  */
-public enum AttendanceType {
-	NORMAL(0, "正常"), OVERTIME(1, "加班"), UNNORMAL(2, "异常");
-
+public enum StudentLevel {
+	I(0, "普通级别"), II(1, "选拔中"), III(2, "工作室在职"), IV(3, "工作室毕业");
 	/**
 	 * 值
 	 */
@@ -32,7 +32,7 @@ public enum AttendanceType {
 	 * @param value
 	 * @param des
 	 */
-	private AttendanceType(int value, String des) {
+	private StudentLevel(int value, String des) {
 		this.value = value;
 		this.des = des;
 	}
@@ -43,15 +43,17 @@ public enum AttendanceType {
 	 * @param value
 	 * @return
 	 */
-	public static AttendanceType getByValue(int value) {
+	public static StudentLevel getByValue(int value) {
 		if (value == 0) {
-			return AttendanceType.NORMAL;
+			return StudentLevel.I;
 		} else if (value == 1) {
-			return AttendanceType.OVERTIME;
+			return StudentLevel.II;
 		} else if (value == 2) {
-			return AttendanceType.UNNORMAL;
+			return StudentLevel.III;
+		} else if (value == 3) {
+			return StudentLevel.IV;
 		} else {
-			return AttendanceType.NORMAL;
+			return StudentLevel.I;
 		}
 	}
 }

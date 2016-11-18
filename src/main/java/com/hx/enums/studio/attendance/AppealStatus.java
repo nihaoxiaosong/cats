@@ -2,15 +2,13 @@ package com.hx.enums.studio.attendance;
 
 /**
  * 考勤状态枚举类
+ * 
  * @author song
  * @date 2016年11月14日下午8:33:37
  */
 public enum AppealStatus {
-	UNAPPEAL(0,"未申诉"),
-	APPEALING(1,"申诉处理中"),
-	APPEALSUCCESS(2,"申诉通过"),
-	APPEALBACK(3,"申诉退回");
-	
+	UNAPPEAL(0, "未申诉"), APPEALING(1, "申诉处理中"), APPEALSUCCESS(2, "申诉通过"), APPEALBACK(3, "申诉退回");
+
 	/**
 	 * 值
 	 */
@@ -19,16 +17,18 @@ public enum AppealStatus {
 	 * 描述
 	 */
 	private String des;
-	
+
 	public int getValue() {
 		return value;
 	}
+
 	public String getDes() {
 		return des;
 	}
-	
+
 	/**
 	 * 构造方法
+	 * 
 	 * @param value
 	 * @param des
 	 */
@@ -36,9 +36,10 @@ public enum AppealStatus {
 		this.value = value;
 		this.des = des;
 	}
-	
+
 	/**
 	 * 静态方法,根据值获取枚举类
+	 * 
 	 * @param value
 	 * @return
 	 */
