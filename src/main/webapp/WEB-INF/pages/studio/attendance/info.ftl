@@ -143,7 +143,7 @@
 
 		</div>
 	</body>
-	<script src="<@s.url '/plugin/My97DatePicker/WdatePicker.js'/>" type="text/javascript"></script>
-	<script src="<@s.url '/js/common/date.js'/>" type="text/javascript"></script>
-	<script src="<@s.url '/js/studio/attendance/info.js'/>" type="text/javascript"></script>
+	<script src="<@s.url '/plugin/My97DatePicker/WdatePicker.js'/>"></script>
+	<script src="<@s.url '/js/common/date.js'/>"></script>
+	<script src="<@s.url '/js/studio/attendance/info.js'/>"></script>
 </html>
