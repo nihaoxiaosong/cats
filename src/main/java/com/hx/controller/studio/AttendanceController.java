@@ -1,4 +1,4 @@
-package com.hx.controller.studio.attendance;
+package com.hx.controller.studio;
 
 import java.util.Date;
 import java.util.List;
