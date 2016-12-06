@@ -39,7 +39,7 @@
 				<div class="col-md-10">
 					<div>
 						<ol class="breadcrumb">
-							<li>基础数据管理</li>
+							<li><span class="glyphicon glyphicon-map-marker"></span> 基础数据管理</li>
 							<li class="active">产品管理</li>
 						</ol>
 					</div>

@@ -47,7 +47,6 @@ public class ProductController extends BaseController {
 	public AjaxResult<Product> insert(@RequestParam(value = "productCode", required = true) String productCode,
 			@RequestParam(value = "productName", required = true) String productName,
 			@RequestParam(value = "productStatus", required = true) String productStatus) {
-		System.out.println(productCode+"==="+productName+"==="+productStatus);
 		ProductStatus ps = ProductStatus.getByValue(Integer.valueOf(productStatus));
 		Product p = new Product();
 		p.setId(CommonUtils.getUuid());
