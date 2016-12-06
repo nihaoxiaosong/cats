@@ -47,18 +47,18 @@
 						<form class="form-inline" role="form">
 							<div class="form-group" style="margin-right: 20px;">
 								<label for="">产品名称:</label>
-								<input class="form-control" type="text" placeholder="请输入产品名称">
+								<input class="form-control" id="productName" type="text" name="productName" value="${productName!}" placeholder="请输入产品名称">
 							</div>
 							<div class="form-group" style="margin-right: 20px;">
 								<label for="">状态:</label>
-								<select class="form-control">
-									<option>请选择状态</option>
-									<option>开启</option>
-									<option>停用</option>
+								<select class="form-control" id="productStatus" name="productStatus">
+									<option value="">请选择状态</option>
+									<option value="0" <#if productStatus==0>selected</#if> >开启</option>
+									<option value="1" <#if productStatus==1>selected</#if> >停用</option>
 								</select>
 							</div>
 							<div class="form-group" style="margin-right: 20px;">
-								<input class="btn btn-primary" type="button" value="查询">
+								<input class="btn btn-primary" id="queryProduct" type="button" value="查询">
 							</div>
 						</form>
 					</div>
@@ -72,41 +72,17 @@
 								<th style="text-align:center">状态</td>
 								<th style="text-align:center">操作</td>
 							</tr>
-							<tr>
-								<td>1</td>
-								<td>1001</td>
-								<td>代理记账云平台</td>
-								<td>启用</td>
-								<td><a href="#">修改</a></td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>1002</td>
-								<td>CMAC基础训练平台</td>
-								<td>启用</td>
-								<td><a href="#">修改</a></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>1003</td>
-								<td>税务实训平台</td>
-								<td>停用</td>
-								<td><a href="#">修改</a></td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>1004</td>
-								<td>理实一体教学平台</td>
-								<td>停用</td>
-								<td><a href="#">修改</a></td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>1005</td>
-								<td>亿企代账(教学版)</td>
-								<td>停用</td>
-								<td><a href="#">修改</a></td>
-							</tr>
+							<#if list?exists && (list?size>0) >
+								<#list list as p>
+									<tr>
+										<td>${p_index+1}</td>
+										<td>${p.code!}</td>
+										<td>${p.name!}</td>
+										<td <#if p.productStatus.des=="停用">style="color:red;"</#if>>${p.productStatus.des!}</td>
+										<td><a href="#">修改</a></td>
+									</tr>
+								</#list>
+							</#if>
 						</table>
 					</div>
 				</div>
@@ -125,19 +101,19 @@
 							<div class="form-group">
 								<label for="productCode" class="col-sm-4 control-label">产品编码</label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" id="productCode" placeholder="请输入产品编码">
+									<input type="text" class="form-control" id="addProductCode" placeholder="请输入产品编码">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="productName" class="col-sm-4 control-label">产品名称</label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" id="productName" placeholder="请输入产品名称">
+									<input type="text" class="form-control" id="addProductName" placeholder="请输入产品名称">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="productStatus" class="col-sm-4 control-label">状态</label>
 								<div class="col-sm-6">
-									<select class="form-control" id="productStatus">
+									<select class="form-control" id="addProductStatus">
 										<option value="">请选择状态</option>
 										<option value="0">启用</option>
 										<option value="1">停用</option>
