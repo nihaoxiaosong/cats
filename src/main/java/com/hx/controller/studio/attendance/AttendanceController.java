@@ -20,7 +20,7 @@ import com.hx.entity.studio.attendance.Attendance;
 import com.hx.enums.studio.attendance.AppealStatus;
 import com.hx.enums.studio.attendance.AttendanceType;
 import com.hx.enums.studio.attendance.SignType;
-import com.hx.service.studio.attendance.impl.AttendanceService;
+import com.hx.service.studio.attendance.AttendanceService;
 import com.hx.util.CommonUtils;
 import com.hx.util.DateUtils;
 import com.hx.util.PageUtils;
