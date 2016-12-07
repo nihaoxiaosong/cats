@@ -11,6 +11,7 @@ import com.hx.dao.studio.attendance.AttendanceDao;
 import com.hx.entity.base.PageBean;
 import com.hx.entity.studio.attendance.Attendance;
 import com.hx.enums.studio.attendance.AttendanceType;
+import com.hx.service.studio.attendance.AttendanceService;
 
 @Service("attendanceService")
 public class AttendanceServiceImpl implements AttendanceService {
