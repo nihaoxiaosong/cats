@@ -10,15 +10,13 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="page-header">
-					<h2>CATS衡信后台管理平台 <small>浙江衡信教育科技有限公司</small></h2>
-				</div>
+				<#include "/common/header.ftl" />
 			</div>
 			<div class="row" style="margin-top: 30px;">
 				<div class="col-md-2">
 					<div class="list-group">
 						<a href="#" class="list-group-item active"><span class="glyphicon glyphicon-wrench"></span> 基础数据管理</a>
-						<a href="#" class="list-group-item row" style="text-align:center">产品管理</a>
+						<a href="#" class="list-group-item" style="text-align:center">产品管理</a>
 						<a href="#" class="list-group-item" style="text-align:center">学校管理</a>
 						<a href="manager.html" class="list-group-item" style="text-align:center">工作室经理管理</a>
 						<a href="#" class="list-group-item" style="text-align:center">老师管理</a>
