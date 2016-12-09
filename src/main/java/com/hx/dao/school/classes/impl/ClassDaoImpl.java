@@ -10,19 +10,19 @@ import org.springframework.util.StringUtils;
 import com.hx.dao.base.BaseDao;
 import com.hx.dao.school.classes.ClassDao;
 import com.hx.entity.base.PageBean;
-import com.hx.entity.school.classes.Classes;
+import com.hx.entity.school.classes.Class;
 import com.hx.enums.school.classes.ClassStatus;
 
 @Repository("classDao")
 public class ClassDaoImpl extends BaseDao implements ClassDao {
 
 	@Override
-	public void insert(Classes classes) {
+	public void insert(Class classes) {
 		catsMongoTemplate.insert(classes);
 	}
 
 	@Override
-	public List<Classes> list(String className, String grade, ClassStatus classStatus, PageBean pageBean) {
+	public List<Class> list(String className, String grade, ClassStatus classStatus, PageBean pageBean) {
 		Query query = new Query();
 		if(!StringUtils.isEmpty(className)){
 	        query.addCriteria(new Criteria("name").regex(className));
@@ -34,7 +34,7 @@ public class ClassDaoImpl extends BaseDao implements ClassDao {
 			query.addCriteria(new Criteria("classStatus").is(classStatus.toString()));
 		}
 		query.skip(pageBean.getStart()).limit(pageBean.getPageSize());
-		return catsMongoTemplate.find(query, Classes.class);
+		return catsMongoTemplate.find(query, Class.class);
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class ClassDaoImpl extends BaseDao implements ClassDao {
 		if(classStatus!=null){
 			query.addCriteria(new Criteria("classStatus").is(classStatus.toString()));
 		}
-		return (int) catsMongoTemplate.count(query, Classes.class);
+		return (int) catsMongoTemplate.count(query, Class.class);
 	}
 
 }

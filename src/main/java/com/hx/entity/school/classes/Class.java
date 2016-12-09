@@ -12,8 +12,8 @@ import com.hx.enums.school.classes.ClassStatus;
  * @date 2016年11月18日下午2:33:25
  *
  */
-@Document(collection = "classes")
-public class Classes {
+@Document(collection = "class")
+public class Class {
 	/**
 	 * id主键
 	 */

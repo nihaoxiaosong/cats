@@ -3,7 +3,7 @@ package com.hx.dao.school.classes;
 import java.util.List;
 
 import com.hx.entity.base.PageBean;
-import com.hx.entity.school.classes.Classes;
+import com.hx.entity.school.classes.Class;
 import com.hx.enums.school.classes.ClassStatus;
 
 public interface ClassDao {
@@ -11,7 +11,7 @@ public interface ClassDao {
 	 * 新增班级信息
 	 * @param classes
 	 */
-	void insert(Classes classes);
+	void insert(Class classes);
 	/**
 	 * 根据班级名称,年级,状态分页查询
 	 * @param className
@@ -20,7 +20,7 @@ public interface ClassDao {
 	 * @param pageBean
 	 * @return
 	 */
-	List<Classes> list(String className, String grade, ClassStatus classStatus, PageBean pageBean);
+	List<Class> list(String className, String grade, ClassStatus classStatus, PageBean pageBean);
 	/**
 	 * 根据班级名称,年级,状态获取总数
 	 * @param className
