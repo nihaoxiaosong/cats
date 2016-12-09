@@ -1,4 +1,4 @@
-package com.hx.dao.background.impl;
+package com.hx.dao.admin.impl;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import com.hx.dao.background.ProductDao;
+import com.hx.dao.admin.ProductDao;
 import com.hx.dao.base.BaseDao;
-import com.hx.entity.background.Product;
-import com.hx.enums.backgrount.ProductStatus;
+import com.hx.entity.admin.Product;
+import com.hx.enums.admin.ProductStatus;
 
 @Repository("productDao")
 public class ProductDaoImpl extends BaseDao implements ProductDao {

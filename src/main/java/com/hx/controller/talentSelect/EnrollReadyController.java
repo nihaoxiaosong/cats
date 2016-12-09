@@ -1,4 +1,4 @@
-package com.hx.controller.school;
+package com.hx.controller.talentSelect;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.hx.controller.base.BaseController;
 
 /**
- * 班级管理
+ * 报名准备
  * @author song
- * @date 2016年12月9日 下午4:48:59
+ * @date 2016年12月9日 下午4:59:42
  */
 @Controller
-@RequestMapping(value = "/class")
-public class ClassController extends BaseController {
+@RequestMapping(value = "/enrollReady")
+public class EnrollReadyController extends BaseController {
 
 }

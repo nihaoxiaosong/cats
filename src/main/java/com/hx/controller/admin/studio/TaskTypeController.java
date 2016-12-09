@@ -1,4 +1,4 @@
-package com.hx.controller.school;
+package com.hx.controller.admin.studio;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.hx.controller.base.BaseController;
 
 /**
- * 班级管理
+ * 任务类型设置
  * @author song
- * @date 2016年12月9日 下午4:48:59
+ * @date 2016年12月9日 下午4:45:41
  */
 @Controller
-@RequestMapping(value = "/class")
-public class ClassController extends BaseController {
+@RequestMapping(value = "/taskType")
+public class TaskTypeController extends BaseController {
 
 }

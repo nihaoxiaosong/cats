@@ -1,4 +1,4 @@
-package com.hx.enums.backgrount;
+package com.hx.enums.admin;
 
 /**
  * 产品状态,启用停用

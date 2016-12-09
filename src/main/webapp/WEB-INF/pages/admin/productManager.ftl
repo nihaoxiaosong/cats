@@ -10,29 +10,11 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<#include "/common/header.ftl" />
+				<#include "/common/admin/header.ftl" />
 			</div>
 			<div class="row" style="margin-top: 30px;">
 				<div class="col-md-2">
-					<div class="list-group">
-						<a href="#" class="list-group-item active"><span class="glyphicon glyphicon-wrench"></span> 基础数据管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">产品管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">学校管理</a>
-						<a href="manager.html" class="list-group-item" style="text-align:center">工作室经理管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">老师管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">学生管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">权限管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">公告管理</a>
-						<a href="#" class="list-group-item active"><span class="glyphicon glyphicon-user"></span> 人才选拔测评管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">CMAC合格标准</a>
-						<a href="#" class="list-group-item" style="text-align:center">选拔合格标准</a>
-						<a href="#" class="list-group-item" style="text-align:center">成绩查询</a>
-						<a href="#" class="list-group-item" style="text-align:center">选拔结果管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">课程管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">政府网站管理</a>
-						<a href="#" class="list-group-item active"><span class="glyphicon glyphicon-hdd"></span> 工作室管理</a>
-						<a href="#" class="list-group-item" style="text-align:center">任务类型设置</a>
-					</div>
+					<#include "/common/admin/left.ftl" />
 				</div>
 				<div class="col-md-10">
 					<div>
@@ -63,12 +45,12 @@
 					<div style="margin-top: 30px;"><button type="button" id="addProduct" class="btn btn-primary">新增</button></div>
 					<div style="margin-top: 5px;">
 						<table class="table table-bordered table-hover table-striped" style="text-align:center">
-							<tr class="info">
-								<th style="text-align:center">序号</td>
-								<th style="text-align:center">产品编码</td>
-								<th style="text-align:center">产品名称</td>
-								<th style="text-align:center">状态</td>
-								<th style="text-align:center">操作</td>
+							<tr class="success">
+								<td><label>序号</label></td>
+								<td><label>产品编码</label></td>
+								<td><label>产品名称</label></td>
+								<td><label>状态</label></td>
+								<td><label>操作</label></td>
 							</tr>
 							<#if list?exists && (list?size>0) >
 								<#list list as p>

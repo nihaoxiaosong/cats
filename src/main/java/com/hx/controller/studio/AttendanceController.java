@@ -25,6 +25,11 @@ import com.hx.util.CommonUtils;
 import com.hx.util.DateUtils;
 import com.hx.util.PageUtils;
 
+/**
+ * 考勤
+ * @author song
+ * @date 2016年12月9日 下午4:51:31
+ */
 @Controller
 @RequestMapping(value = "/attendance")
 public class AttendanceController extends BaseController {

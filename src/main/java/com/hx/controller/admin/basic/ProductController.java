@@ -1,4 +1,4 @@
-package com.hx.controller.background;
+package com.hx.controller.admin.basic;
 
 import java.util.List;
 
@@ -14,11 +14,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hx.controller.base.BaseController;
 import com.hx.dto.base.AjaxResult;
-import com.hx.entity.background.Product;
-import com.hx.enums.backgrount.ProductStatus;
-import com.hx.service.background.ProductService;
+import com.hx.entity.admin.Product;
+import com.hx.enums.admin.ProductStatus;
+import com.hx.service.admin.ProductService;
 import com.hx.util.CommonUtils;
 
+/**
+ * 产品管理
+ * @author song
+ * @date 2016年12月9日 下午4:23:21
+ */
 @Controller
 @RequestMapping(value = "/product")
 public class ProductController extends BaseController {
@@ -26,6 +31,12 @@ public class ProductController extends BaseController {
 	@Resource
 	private ProductService productService;
 
+	/**
+	 * 产品列表
+	 * @param productName
+	 * @param productStatus
+	 * @return
+	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView list(@RequestParam(value = "productName", required = false) String productName,
 			@RequestParam(value = "productStatus", required = false) String productStatus) {
@@ -38,10 +49,17 @@ public class ProductController extends BaseController {
 		mav.addObject("list", list);
 		mav.addObject("productName", productName);
 		mav.addObject("productStatus", productStatus);
-		mav.setViewName("/background/productManager");
+		mav.setViewName("/admin/productManager");
 		return mav;
 	}
 
+	/**
+	 * 新增产品
+	 * @param productCode
+	 * @param productName
+	 * @param productStatus
+	 * @return
+	 */
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
 	public AjaxResult<Product> insert(@RequestParam(value = "productCode", required = true) String productCode,

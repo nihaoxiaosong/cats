@@ -1,11 +1,11 @@
-package com.hx.dao.background;
+package com.hx.service.admin;
 
 import java.util.List;
 
-import com.hx.entity.background.Product;
-import com.hx.enums.backgrount.ProductStatus;
+import com.hx.entity.admin.Product;
+import com.hx.enums.admin.ProductStatus;
 
-public interface ProductDao {
+public interface ProductService {
 	/**
 	 * 根据产品名称和状态查询
 	 * @param name

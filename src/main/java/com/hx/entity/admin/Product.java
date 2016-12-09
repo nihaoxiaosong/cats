@@ -1,9 +1,9 @@
-package com.hx.entity.background;
+package com.hx.entity.admin;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.hx.enums.backgrount.ProductStatus;
+import com.hx.enums.admin.ProductStatus;
 
 /**
  * 产品信息
