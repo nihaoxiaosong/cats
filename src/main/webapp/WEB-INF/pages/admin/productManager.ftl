@@ -112,6 +112,6 @@
 		</div>
 		
 	</body>
-	<script src="<@s.url '/js/background/productManager.js'/>"></script>
+	<script src="<@s.url '/js/admin/productManager.js'/>"></script>
 	<script src="<@s.url '/js/common/common.js'/>"></script>
 </html>

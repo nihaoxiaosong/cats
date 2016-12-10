@@ -1,5 +1,6 @@
 <div class="list-group">
 	<a href="#" class="list-group-item active"><span class="glyphicon glyphicon-wrench"></span> 基础数据管理</a>
+	<a href="/profuct/list" class="list-group-item" style="text-align:center">用户管理</a>
 	<a href="#" class="list-group-item" style="text-align:center">产品管理</a>
 	<a href="#" class="list-group-item" style="text-align:center">学校管理</a>
 	<a href="manager.html" class="list-group-item" style="text-align:center">工作室经理管理</a>

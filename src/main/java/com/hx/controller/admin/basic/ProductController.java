@@ -60,8 +60,8 @@ public class ProductController extends BaseController {
 	 * @param productStatus
 	 * @return
 	 */
-	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
+	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces = { "application/json;charset=UTF-8" })
 	public AjaxResult<Product> insert(@RequestParam(value = "productCode", required = true) String productCode,
 			@RequestParam(value = "productName", required = true) String productName,
 			@RequestParam(value = "productStatus", required = true) String productStatus) {
