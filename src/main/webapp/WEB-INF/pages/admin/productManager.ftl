@@ -45,7 +45,7 @@
 					<div style="margin-top: 30px;"><button type="button" id="addProduct" class="btn btn-primary">新增</button></div>
 					<div style="margin-top: 5px;">
 						<table class="table table-bordered table-hover table-striped" style="text-align:center">
-							<tr class="success">
+							<tr class="warning">
 								<td><label>序号</label></td>
 								<td><label>产品编码</label></td>
 								<td><label>产品名称</label></td>
