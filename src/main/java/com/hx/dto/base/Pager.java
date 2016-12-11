@@ -31,7 +31,6 @@ public class Pager<T> {
 
 	public Pager(int pageSize, int start, int totalCount, List<T> list) {
 		super();
-		this.currentPage = currentPage;
 		this.pageSize = pageSize;
 		this.start = (currentPage-1)*pageSize;
 		this.totalCount = totalCount;

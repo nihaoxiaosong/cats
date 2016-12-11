@@ -21,39 +21,33 @@ public class AdminUserServiceImpl implements AdminUserService {
 	public Pager<AdminUser> pager(String userName, AdminUserStatus status, int startIndex, int limit) {
 		List<AdminUser> list = adminUserDao.list(userName, status, startIndex, limit);
 		int count = adminUserDao.count(userName, status);
-		int totalCount = adminUserDao.totalCount();
-		Pager<AdminUser> pager = new Pager<AdminUser>(limit, startIndex, totalCount, list);
-		return null;
+		Pager<AdminUser> pager = new Pager<AdminUser>(limit, startIndex, count, list);
+		return pager;
 	}
 
 	@Override
 	public AdminUser getByUserCode(String userCode) {
-		// TODO Auto-generated method stub
-		return null;
+		return adminUserDao.getByUserCode(userCode);
 	}
 
 	@Override
 	public AdminUser getById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return adminUserDao.getById(id);
 	}
 
 	@Override
 	public void insert(AdminUser adminUser) {
-		// TODO Auto-generated method stub
-
+		adminUserDao.insert(adminUser);
 	}
 
 	@Override
 	public void update(AdminUser adminUser) {
-		// TODO Auto-generated method stub
-
+		adminUserDao.update(adminUser);
 	}
 
 	@Override
 	public void updatePassword(String id, String oldPassword, String newPassword) {
-		// TODO Auto-generated method stub
-
+		adminUserDao.updatePassword(id, oldPassword, newPassword);
 	}
 
 }

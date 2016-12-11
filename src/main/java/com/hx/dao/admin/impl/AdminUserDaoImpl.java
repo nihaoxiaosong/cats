@@ -2,7 +2,10 @@ package com.hx.dao.admin.impl;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 
 import com.hx.dao.admin.AdminUserDao;
 import com.hx.dao.base.BaseDao;
@@ -14,44 +17,55 @@ public class AdminUserDaoImpl extends BaseDao implements AdminUserDao {
 
 	@Override
 	public List<AdminUser> list(String userName, AdminUserStatus status, int startIndex, int limit) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = new Query();
+		if (!StringUtils.isEmpty(userName)) {
+			query.addCriteria(new Criteria("userName").regex(userName));
+		}
+		if (status != null) {
+			query.addCriteria(new Criteria("status").is(status.toString()));
+		}
+		query.skip(startIndex).limit(limit);
+		return catsMongoTemplate.find(query, AdminUser.class);
 	}
 
 	@Override
 	public int count(String userName, AdminUserStatus status) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	@Override
-	public int totalCount(){
-		// TODO Auto-generated method stub
-		return 0;
+		Query query = new Query();
+		if (!StringUtils.isEmpty(userName)) {
+			query.addCriteria(new Criteria("userName").regex(userName));
+		}
+		if (status != null) {
+			query.addCriteria(new Criteria("status").is(status.toString()));
+		}
+		return (int) catsMongoTemplate.count(query, AdminUser.class);
 	}
 
 	@Override
 	public AdminUser getByUserCode(String userCode) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = new Query();
+		if (!StringUtils.isEmpty(userCode)) {
+			query.addCriteria(new Criteria("userCode").is(userCode));
+		}
+		return catsMongoTemplate.findOne(query, AdminUser.class);
 	}
 
 	@Override
 	public AdminUser getById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = new Query();
+		if (!StringUtils.isEmpty(id)) {
+			query.addCriteria(new Criteria("id").is(id));
+		}
+		return catsMongoTemplate.findOne(query, AdminUser.class);
 	}
 
 	@Override
 	public void insert(AdminUser adminUser) {
-		// TODO Auto-generated method stub
-
+		catsMongoTemplate.insert(adminUser);
 	}
 
 	@Override
 	public void update(AdminUser adminUser) {
-		// TODO Auto-generated method stub
-
+		catsMongoTemplate.save(adminUser);
 	}
 
 	@Override

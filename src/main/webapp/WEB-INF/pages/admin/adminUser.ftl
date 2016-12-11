@@ -26,31 +26,31 @@
 					<div style="margin-top: 30px;">
 						<form class="form-inline" role="form">
 							<div class="form-group" style="margin-right: 20px;">
-								<label for="">用户名:</label>
-								<input class="form-control" type="text" placeholder="请输入用户名">
+								<label for="adminUserName">用户名:</label>
+								<input class="form-control" type="text" id="adminUserName" name="adminUserName" value="${adminUserName!}" placeholder="请输入用户名">
 							</div>
 							<div class="form-group" style="margin-right: 20px;">
-								<label for="">状态:</label>
-								<select class="form-control">
-									<option>请选择状态</option>
-									<option>开启</option>
-									<option>停用</option>
+								<label for="adminUserStatus">状态:</label>
+								<select class="form-control" id="adminUserStatus" name="adminUserStatus">
+									<option value="">请选择状态</option>
+									<option value="0" <#if adminUserStatus==0>selected</#if> >开启</option>
+									<option value="1" <#if adminUserStatus==1>selected</#if> >停用</option>
 								</select>
 							</div>
 							<div class="form-group" style="margin-right: 20px;">
-								<input class="btn btn-primary" type="button" value="查询">
+								<input class="btn btn-primary" type="button" id="queryAdminUser" value="查询">
 							</div>
 						</form>
 					</div>
-					<div style="margin-top: 30px;"><button type="button" class="btn btn-primary">新增</button></div>
+					<div style="margin-top: 30px;"><button type="button" id="addAdminUser" class="btn btn-primary">新增</button></div>
 					<div style="margin-top: 5px;">
 						<table class="table table-bordered table-hover" style="text-align:center">
-							<tr class="info">
-								<td>序号</td>
-								<td>用户编码</td>
-								<td>用户姓名</td>
-								<td>状态</td>
-								<td>操作</td>
+							<tr class="warning">
+								<td><label>序号</label></td>
+								<td><label>用户编码</label></td>
+								<td><label>用户姓名</label></td>
+								<td><label>状态</label></td>
+								<td><label>操作</label></td>
 							</tr>
 							<tr>
 								<td>1</td>
@@ -78,7 +78,7 @@
 			</div>
 		</div>
 		<#--新增弹出框-->
-		<div class="modal fade" id="addUserModal">
+		<div class="modal fade" id="addAdminUserModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -90,19 +90,19 @@
 							<div class="form-group">
 								<label for="userCode" class="col-sm-4 control-label">用户编码</label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" id="addUserCode" placeholder="请输入用户编码">
+									<input type="text" class="form-control" id="addAdminUserCode" placeholder="请输入用户编码">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="userName" class="col-sm-4 control-label">姓名</label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" id="addUserName" placeholder="请输入姓名">
+									<input type="text" class="form-control" id="addAdminUserName" placeholder="请输入姓名">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="userStatus" class="col-sm-4 control-label">状态</label>
 								<div class="col-sm-6">
-									<select class="form-control" id="addUserStatus">
+									<select class="form-control" id="addAdminUserStatus">
 										<option value="">请选择状态</option>
 										<option value="0">启用</option>
 										<option value="1">停用</option>
@@ -114,7 +114,7 @@
 					<div class="modal-footer">
 						<span id="errorMsg" style="color:red;"></span>
 						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-						<button type="button" class="btn btn-primary" id="addUserConfirm">确认</button>
+						<button type="button" class="btn btn-primary" id="addAdminUserConfirm">确认</button>
 					</div>
 				</div>
 			</div>
@@ -122,5 +122,6 @@
 		
 		
 	</body>
-
+	<script src="<@s.url '/js/admin/adminUser.js'/>"></script>
+	<script src="<@s.url '/js/common/common.js'/>"></script>
 </html>

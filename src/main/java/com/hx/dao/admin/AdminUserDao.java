@@ -23,11 +23,6 @@ public interface AdminUserDao {
 	 */
 	int count (String userName, AdminUserStatus status);
 	/**
-	 * 计总数
-	 * @return
-	 */
-	int totalCount();
-	/**
 	 * 根据用户名查找
 	 * @param userCode
 	 * @return

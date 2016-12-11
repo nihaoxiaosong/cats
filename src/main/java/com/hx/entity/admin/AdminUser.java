@@ -31,6 +31,7 @@ public class AdminUser {
 	 * 启用/停用
 	 */
 	private AdminUserStatus status;
+	
 	public String getId() {
 		return id;
 	}

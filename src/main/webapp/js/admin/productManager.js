@@ -45,6 +45,9 @@ $(function() {
 			function(data){
 				if(data["success"]){
 					location.href = "list";
+				}else{
+					$("#errorMsg").text(data["error"]);
+					return;
 				}
 			}
 		);
