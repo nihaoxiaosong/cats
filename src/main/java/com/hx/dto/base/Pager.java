@@ -1,4 +1,4 @@
-package com.hx.entity.base;
+package com.hx.dto.base;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class Pager<T> {
 		super();
 	}
 
-	public Pager(int currentPage, int pageSize, int start, int totalCount, List<T> list) {
+	public Pager(int pageSize, int start, int totalCount, List<T> list) {
 		super();
 		this.currentPage = currentPage;
 		this.pageSize = pageSize;

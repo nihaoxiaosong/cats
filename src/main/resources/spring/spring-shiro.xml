@@ -20,16 +20,16 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		<!-- Shiro的核心安全接口,这个属性是必须的 -->
 		<property name="securityManager" ref="securityManager" />
 		<!-- 身份认证失败，则跳转到登录页面的配置 -->
-		<property name="loginUrl" value="login.ftl" />
+		<property name="loginUrl" value="/login/index" />
 		<!-- 权限认证失败，则跳转到指定页面 -->
-		<property name="unauthorizedUrl" value="/unauthor.ftl" />
+		<property name="unauthorizedUrl" value="/login/index" />
 		<!-- Shiro连接约束配置,即过滤链的定义 -->
 		<property name="filterChainDefinitions">
 			<value>
 				/css/** = anon
 				/js/** = anon
-                <!--/login/index = anon-->
-                /** = anon
+                /login/index = anon
+                /product/list = authc,roles[admin]
 			</value>
 		</property>
 	</bean>

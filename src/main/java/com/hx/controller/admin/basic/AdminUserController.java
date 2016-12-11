@@ -12,6 +12,6 @@ import com.hx.controller.base.BaseController;
  */
 @Controller
 @RequestMapping(value = "/user")
-public class UserController extends BaseController {
+public class AdminUserController extends BaseController {
 
 }
