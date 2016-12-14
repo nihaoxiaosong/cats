@@ -44,4 +44,23 @@ public class ProductDaoImpl extends BaseDao implements ProductDao {
 		catsMongoTemplate.insert(product);
 	}
 
+	@Override
+	public Product getById(String id) {
+		return catsMongoTemplate.findById(id, Product.class);
+	}
+
+	@Override
+	public Product getByCode(String code) {
+		Query query = new Query();
+		if(!StringUtils.isEmpty(code)){
+	        query.addCriteria(new Criteria("code").is(code));
+		}
+		return catsMongoTemplate.findOne(query, Product.class);
+	}
+
+	@Override
+	public void save(Product p) {
+		catsMongoTemplate.save(p);
+	}
+
 }

@@ -59,7 +59,7 @@
 										<td>${p.code!}</td>
 										<td>${p.name!}</td>
 										<td <#if p.productStatus.des=="停用">style="color:red;"</#if>>${p.productStatus.des!}</td>
-										<td><a href="#">修改</a></td>
+										<td><a href="javascript:void(0);" name="editProduct" id="${p.id!}">修改</a></td>
 									</tr>
 								</#list>
 							</#if>
@@ -79,19 +79,19 @@
 					<div class="modal-body">
 						<form class="form-horizontal" role="form">
 							<div class="form-group">
-								<label for="productCode" class="col-sm-4 control-label">产品编码</label>
+								<label for="addProductCode" class="col-sm-4 control-label">产品编码</label>
 								<div class="col-sm-6">
 									<input type="text" class="form-control" id="addProductCode" placeholder="请输入产品编码">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productName" class="col-sm-4 control-label">产品名称</label>
+								<label for="addProductName" class="col-sm-4 control-label">产品名称</label>
 								<div class="col-sm-6">
 									<input type="text" class="form-control" id="addProductName" placeholder="请输入产品名称">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productStatus" class="col-sm-4 control-label">状态</label>
+								<label for="addProductStatus" class="col-sm-4 control-label">状态</label>
 								<div class="col-sm-6">
 									<select class="form-control" id="addProductStatus">
 										<option value="">请选择状态</option>
@@ -103,14 +103,55 @@
 						</form>
 					</div>
 					<div class="modal-footer">
-						<span id="errorMsg" style="color:red;"></span>
+						<span id="addErrorMsg" style="color:red;"></span>
 						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 						<button type="button" class="btn btn-primary" id="addProductConfirm">确认</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+		<#--修改弹出框-->
+		<div class="modal fade" id="editProductModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">修改产品</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for=" editProductCode" class="col-sm-4 control-label">产品编码</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="editProductCode" disabled placeholder="请输入产品编码">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="editProductName" class="col-sm-4 control-label">产品名称</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="editProductName" placeholder="请输入产品名称">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="editProductStatus" class="col-sm-4 control-label">状态</label>
+								<div class="col-sm-6">
+									<select class="form-control" id="editProductStatus">
+										<option value="">请选择状态</option>
+										<option value="0">启用</option>
+										<option value="1">停用</option>
+									</select>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<span id="editErrorMsg" style="color:red;"></span>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary" id="editProductConfirm">确认</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 	<script src="<@s.url '/js/admin/productManager.js'/>"></script>
 	<script src="<@s.url '/js/common/common.js'/>"></script>

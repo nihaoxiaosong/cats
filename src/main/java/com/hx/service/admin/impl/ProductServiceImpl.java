@@ -32,4 +32,19 @@ public class ProductServiceImpl implements ProductService {
 		productDao.insert(product);
 	}
 
+	@Override
+	public Product getById(String id) {
+		return productDao.getById(id);
+	}
+
+	@Override
+	public Product getByCode(String code) {
+		return productDao.getByCode(code);
+	}
+
+	@Override
+	public void save(Product p) {
+		productDao.save(p);
+	}
+
 }

@@ -16,7 +16,9 @@ $(function(){
 			backdrop:"static"
 		});
 	});
-	
+	/**
+	 * 新增按钮点击事件,后台交互
+	 */
 	$("#addAdminUserConfirm").click(function(){
 		var addAdminUserCode = $("#addAdminUserCode").val();
 		if(common.isEmpty(addAdminUserCode)){
@@ -36,9 +38,9 @@ $(function(){
 		$.post(
 			"/adminUser/insert",
 			{
-				"addAdminUserCode":addAdminUserCode,
-				"addAdminUserName":addAdminUserName,
-				"addAdminUserStatus":addAdminUserStatus
+				"adminUserCode":addAdminUserCode,
+				"adminUserName":addAdminUserName,
+				"adminUserStatus":addAdminUserStatus
 			},
 			function(data){
 				if(data["success"]){
@@ -50,4 +52,23 @@ $(function(){
 			}
 		);
 	});
+	
+	/**
+	 * 三个框点击事件,提示语消失
+	 */
+	$("#addAdminUserCode,#addAdminUserName,#addAdminUserStatus").click(function(){
+		$("#errorMsg").text("");
+	});
+	
+	/**
+	 * 删除按钮点击事件,弹出提示框
+	 */
+	$("a[name='delAdminUser']").click(function(){
+		$("#delAdminUserModal").modal({
+			keyboard : false,
+			backdrop:"static"
+		});
+	});
+	
+	
 });

@@ -52,26 +52,21 @@
 								<td><label>状态</label></td>
 								<td><label>操作</label></td>
 							</tr>
-							<tr>
-								<td>1</td>
-								<td>zhangsan</td>
-								<td>张三</td>
-								<td>启用</td>
-								<td>
-									<a href="#">修改</a>
-									<a href="#">重置密码</a>
-								</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>lisi</td>
-								<td>李四</td>
-								<td>停用</td>
-								<td>
-									<a href="#">修改</a>
-									<a href="#">重置密码</a>
-								</td>
-							</tr>
+							<#if pager?exists && pager.list?exists && (pager.list?size>0) >
+								<#list pager.list as adminUser>
+									<tr>
+										<td>${adminUser_index+1}</td>
+										<td>${adminUser.userCode!}</td>
+										<td>${adminUser.userName!}</td>
+										<td <#if adminUser.status.des=="停用">style="color:red;"</#if>>${adminUser.status.des!}</td>
+										<td>
+											<a href="#">修改</a>
+											<a href="#">重置密码</a>
+											<a href="Javascript:void(0);" name="delAdminUser">删除</a>
+										</td>
+									</tr>
+								</#list>
+							</#if>
 						</table>
 					</div>
 				</div>
@@ -88,19 +83,19 @@
 					<div class="modal-body">
 						<form class="form-horizontal" role="form">
 							<div class="form-group">
-								<label for="userCode" class="col-sm-4 control-label">用户编码</label>
+								<label for="addAdminUserCode" class="col-sm-4 control-label">用户编码</label>
 								<div class="col-sm-6">
 									<input type="text" class="form-control" id="addAdminUserCode" placeholder="请输入用户编码">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="userName" class="col-sm-4 control-label">姓名</label>
+								<label for="addAdminUserName" class="col-sm-4 control-label">姓名</label>
 								<div class="col-sm-6">
 									<input type="text" class="form-control" id="addAdminUserName" placeholder="请输入姓名">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="userStatus" class="col-sm-4 control-label">状态</label>
+								<label for="addAdminUserStatus" class="col-sm-4 control-label">状态</label>
 								<div class="col-sm-6">
 									<select class="form-control" id="addAdminUserStatus">
 										<option value="">请选择状态</option>
@@ -115,6 +110,25 @@
 						<span id="errorMsg" style="color:red;"></span>
 						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 						<button type="button" class="btn btn-primary" id="addAdminUserConfirm">确认</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<#--删除确认弹出框-->
+		<div class="modal fade" id="delAdminUserModal">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">删除用户</h4>
+					</div>
+					<div class="modal-body" style="text-align:center">
+						<span>是否确认删除?</span>
+					</div>
+					<div class="modal-footer">
+						<span id="errorMsg" style="color:red;"></span>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary" id="delAdminUserConfirm">确认</button>
 					</div>
 				</div>
 			</div>

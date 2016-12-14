@@ -75,5 +75,33 @@ public class ProductController extends BaseController {
 		AjaxResult<Product> result = new AjaxResult<Product>(true, p);
 		return result;
 	}
+	
+	/**
+	 * 根据 id 获取产品信息
+	 * @param productId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getById", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	public AjaxResult<Product> getById(@RequestParam(value = "productId", required = true) String productId) {
+		Product p = productService.getById(productId);
+		AjaxResult<Product> result = new AjaxResult<Product>(true, p);
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/update", method = RequestMethod.POST, produces = { "application/json;charset=UTF-8" })
+	public AjaxResult<Product> update(@RequestParam(value = "productCode", required = true) String productCode,
+			@RequestParam(value = "productName", required = true) String productName,
+			@RequestParam(value = "productStatus", required = true) String productStatus) {
+		ProductStatus ps = ProductStatus.getByValue(Integer.valueOf(productStatus));
+		Product p = productService.getByCode(productCode);
+		p.setCode(productCode);
+		p.setName(productName);
+		p.setProductStatus(ps);
+		productService.save(p);
+		AjaxResult<Product> result = new AjaxResult<Product>(true, p);
+		return result;
+	}
 
 }

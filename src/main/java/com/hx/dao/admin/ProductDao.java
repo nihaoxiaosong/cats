@@ -25,4 +25,21 @@ public interface ProductDao {
 	 * @param product
 	 */
 	void insert(Product product);
+	/**
+	 * 根据 id 查询
+	 * @param id
+	 * @return
+	 */
+	Product getById(String id);
+	/**
+	 * 根据产品编号查询
+	 * @param code
+	 * @return
+	 */
+	Product getByCode(String code);
+	/**
+	 * 修改产品信息
+	 * @param p
+	 */
+	void save(Product p);
 }

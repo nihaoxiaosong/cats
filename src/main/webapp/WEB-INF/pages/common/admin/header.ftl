@@ -49,7 +49,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<span id="errorMsg" style="color:red;"></span>
+				<span id="changePwdErrorMsg" style="color:red;"></span>
 				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 				<button type="button" class="btn btn-primary" id="">确认</button>
 			</div>
