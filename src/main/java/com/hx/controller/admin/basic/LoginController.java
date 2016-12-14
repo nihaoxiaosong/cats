@@ -42,7 +42,7 @@ public class LoginController extends BaseController {
 			subject.login(token);
 			CurrentUser cu = new CurrentUser();
 			cu.setUserCode(userCode);
-			cu.setUserName("song");
+			cu.setUserName(userCode);
 			result = new AjaxResult<CurrentUser>(true, cu);
 			Session session=subject.getSession();
 			session.setAttribute("currentUser", cu);

@@ -62,7 +62,7 @@ var login = {
 				"password" : password
 			}, function(data) {
 				if (data["success"]) {
-					location.href = "/product/list";
+					location.href = "/adminUser/list";
 				} else {
 					$("#errorMsg").html("用户名或密码错误!");
 					return;

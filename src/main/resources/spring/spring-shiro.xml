@@ -29,7 +29,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 				/css/** = anon
 				/js/** = anon
                 /login/index = anon
-                /product/list = authc,roles[admin]
+                <!-- /product/list = authc,roles[admin] -->
+                /product/list = authc
 			</value>
 		</property>
 	</bean>

@@ -3,6 +3,8 @@ package com.hx.shiro;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.annotation.Resource;
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -13,7 +15,13 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
+import com.hx.dao.admin.AdminUserDao;
+import com.hx.entity.admin.AdminUser;
+
 public class UserRealm extends AuthorizingRealm {
+	
+	@Resource
+	private AdminUserDao adminUserDao;
 
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -37,6 +45,13 @@ public class UserRealm extends AuthorizingRealm {
 		String password = new String(usernamePasswordToken.getPassword());
 		if (userCode.equals("admin") && password.equals("admin")) {
 			return new SimpleAuthenticationInfo(userCode, password, getName());
+		}
+		
+		AdminUser adminUser = adminUserDao.getByUserCode(userCode);
+		if(adminUser!=null){
+			if(adminUser.getPassword().equals(password)){
+				return new SimpleAuthenticationInfo(userCode, password, getName());
+			}
 		}
 		return null;
 	}

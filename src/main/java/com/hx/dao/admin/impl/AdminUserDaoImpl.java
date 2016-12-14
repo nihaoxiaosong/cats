@@ -46,6 +46,7 @@ public class AdminUserDaoImpl extends BaseDao implements AdminUserDao {
 		if (!StringUtils.isEmpty(userCode)) {
 			query.addCriteria(new Criteria("userCode").is(userCode));
 		}
+		query.addCriteria(new Criteria("status").is(AdminUserStatus.ENABLE));
 		return catsMongoTemplate.findOne(query, AdminUser.class);
 	}
 
