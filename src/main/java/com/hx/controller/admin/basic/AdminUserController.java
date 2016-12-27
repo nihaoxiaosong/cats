@@ -72,8 +72,8 @@ public class AdminUserController extends BaseController {
 		AdminUserStatus aus = AdminUserStatus.getByValue(Integer.valueOf(adminUserStatus));
 		AdminUser au = new AdminUser();
 		au.setId(CommonUtils.getUuid());
-		au.setUserCode(adminUserCode);
-		au.setUserName(adminUserName);
+		au.setCode(adminUserCode);
+		au.setName(adminUserName);
 		au.setPassword("123456");
 		au.setStatus(aus);
 		adminUserService.insert(au);

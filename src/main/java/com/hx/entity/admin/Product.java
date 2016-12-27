@@ -28,7 +28,7 @@ public class Product {
 	/**
 	 * 产品状态
 	 */
-	private ProductStatus productStatus;
+	private ProductStatus status;
 	
 	public String getId() {
 		return id;
@@ -48,11 +48,10 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public ProductStatus getProductStatus() {
-		return productStatus;
+	public ProductStatus getStatus() {
+		return status;
 	}
-	public void setProductStatus(ProductStatus productStatus) {
-		this.productStatus = productStatus;
+	public void setStatus(ProductStatus status) {
+		this.status = status;
 	}
-	
 }

@@ -70,7 +70,7 @@ public class ProductController extends BaseController {
 		p.setId(CommonUtils.getUuid());
 		p.setCode(productCode);
 		p.setName(productName);
-		p.setProductStatus(ps);
+		p.setStatus(ps);
 		productService.insert(p);
 		AjaxResult<Product> result = new AjaxResult<Product>(true, p);
 		return result;
@@ -98,7 +98,7 @@ public class ProductController extends BaseController {
 		Product p = productService.getByCode(productCode);
 		p.setCode(productCode);
 		p.setName(productName);
-		p.setProductStatus(ps);
+		p.setStatus(ps);
 		productService.save(p);
 		AjaxResult<Product> result = new AjaxResult<Product>(true, p);
 		return result;

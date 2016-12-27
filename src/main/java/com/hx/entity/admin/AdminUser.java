@@ -17,11 +17,11 @@ public class AdminUser {
 	/**
 	 * 用户编码
 	 */
-	private String userCode;
+	private String code;
 	/**
 	 * 姓名
 	 */
-	private String userName;
+	private String name;
 	/**
 	 * 密码
 	 */
@@ -38,17 +38,17 @@ public class AdminUser {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getUserCode() {
-		return userCode;
+	public String getCode() {
+		return code;
 	}
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
+	public void setCode(String code) {
+		this.code = code;
 	}
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPassword() {
 		return password;
