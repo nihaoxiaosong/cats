@@ -1,6 +1,7 @@
 package com.hx.util;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CookieUtils {
@@ -17,41 +18,54 @@ public class CookieUtils {
 	 * 新增 cookie
 	 * @param key
 	 * @param value
-	 * @param path
 	 * @param maxage
 	 * @param response
 	 * @return
 	 */
-	public static Cookie addNewCookie(String key, String value, String path, int maxage, HttpServletResponse response) {
-		Cookie cookie = createCookie(key, value, path, maxage);
-		response.addCookie(cookie);
-		return cookie;
-	}
-
-	public static Cookie createCookie(String key, String value, String path, int maxage) {
+	public static void addCookie(String key, String value, int maxage, HttpServletResponse response) {
 		Cookie cookie = new Cookie(key, value);
-		cookie.setPath(path);
+		cookie.setPath("/");
 		cookie.setMaxAge(maxage);
+		if (maxage != 0) {
+			cookie.setMaxAge(maxage);
+		} else {
+			cookie.setMaxAge(COOKIE_MAX_AGE);
+		}
+		response.addCookie(cookie);
+	}
+	
+	/**
+	 * 查询cookie
+	 * @param request
+	 * @param key
+	 * @return
+	 */
+	public static Cookie getCookie(HttpServletRequest request, String key) {
+		Cookie[] cookies = request.getCookies();
+		Cookie cookie = null;
+		for (Cookie c : cookies) {
+			if (key.equals(c.getName())) {
+				cookie = c;
+				break;
+			}
+		}
 		return cookie;
 	}
 
 	/**
 	 * 删除 cookie
-	 * @param key
-	 * @param path
+	 * @param request
 	 * @param response
+	 * @param key
 	 * @return
 	 */
-	public static Cookie delCookie(String key, String path, HttpServletResponse response) {
-		Cookie cookie = removeCookie(key, path);
-		response.addCookie(cookie);
-		return cookie;
-	}
-	
-	public static Cookie removeCookie(String key, String path) {
-		Cookie cookie = new Cookie(key, null);
-		cookie.setPath(path);
-		cookie.setMaxAge(0);
-		return cookie;
+	public static void removeCookie(HttpServletRequest request, HttpServletResponse response, String key) {
+		Cookie cookie = getCookie(request, key);
+		if(null != cookie){
+			cookie.setPath("/");
+			cookie.setValue("");
+			cookie.setMaxAge(0);
+			response.addCookie(cookie);
+		}
 	}
 }

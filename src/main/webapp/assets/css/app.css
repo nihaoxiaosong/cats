@@ -21,7 +21,7 @@ header {
   vertical-align: middle;
 }
 .tpl-header-logo img {
-  width: 170px;
+  width: 210px;
 }
 .tpl-header-fluid {
   margin-left: 240px;
@@ -729,6 +729,10 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
 .theme-white .tpl-login-logo {
   background: url(../img/cats_login_a.png) center no-repeat;
 }
+.theme-white .header-logo {
+	
+  background: #fff url(../img/cats_logo_a.png) center no-repeat;
+}
 .theme-white .sub-active {
   color: #23abf0!important;
 }
@@ -1202,7 +1206,6 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
   border-top: 1px solid #eee;
 }
 .theme-white .tpl-header-logo {
-  background: #fff;
   border-bottom: 1px solid #eee;
 }
 .theme-white .tpl-header-switch-button {
@@ -1339,6 +1342,9 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
 }
 .theme-black .tpl-login-logo {
   background: url(../img/cats_login_b.png) center no-repeat;
+}
+.theme-black .header-logo {
+  background: url(../img/cats_logo_b.png) center no-repeat;
 }
 .theme-black .tpl-table-line-img {
   max-width: 100px;

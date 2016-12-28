@@ -18,6 +18,7 @@ import com.hx.entity.admin.AdminUser;
 import com.hx.enums.admin.AdminUserStatus;
 import com.hx.service.admin.AdminUserService;
 import com.hx.util.CommonUtils;
+import com.hx.util.CookieUtils;
 
 /**
  * 用户管理
@@ -48,6 +49,7 @@ public class AdminUserController extends BaseController {
 		if (!StringUtils.isEmpty(adminUserStatus)) {
 			aus = AdminUserStatus.getByValue(Integer.valueOf(adminUserStatus));
 		}
+		CookieUtils.addCookie(HXConstants.CURRENT_URL_ID, HXConstants.ADMIN_USER, 0, response);
 		ModelAndView mav = new ModelAndView();
 		Pager<AdminUser> pager = adminUserService.pager(adminUserName, aus, (Integer.valueOf(currentPage) - 1) * HXConstants.PAGE_ZISE, HXConstants.PAGE_ZISE);
 		mav.addObject("pager", pager);

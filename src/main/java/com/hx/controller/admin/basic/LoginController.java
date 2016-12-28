@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hx.HXConstants;
 import com.hx.controller.base.BaseController;
 import com.hx.dto.admin.CurrentUser;
 import com.hx.dto.base.AjaxResult;
+import com.hx.util.CookieUtils;
 
 /**
  * 登录
@@ -46,11 +48,18 @@ public class LoginController extends BaseController {
 			result = new AjaxResult<CurrentUser>(true, cu);
 			Session session=subject.getSession();
 			session.setAttribute("currentUser", cu);
-//			System.out.println(session.getAttribute("currentUser").toString());
 		}catch(Exception e){
 			result = new AjaxResult<CurrentUser>(false, "用户名或密码错误!");
 		}
 		return result;
+	}
+	
+	@RequestMapping(value = "/home")
+	public ModelAndView home(String userName, String password){
+		CookieUtils.addCookie(HXConstants.CURRENT_URL_ID, HXConstants.HOME, 0, response);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/admin/home");
+		return mav;
 	}
 	
 	@RequestMapping(value = "/logout")
@@ -58,7 +67,7 @@ public class LoginController extends BaseController {
 		Subject subject = SecurityUtils.getSubject();
         Session session = subject.getSession();
         session.removeAttribute("currentUser");
-        
+        CookieUtils.removeCookie(request, response, HXConstants.CURRENT_URL_ID);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/admin/login");
 		return mav;

@@ -3,18 +3,18 @@ $(function() {
 		var userCode = $("#userCode").val();
 		var password = $("#password").val();
 		if(!login.checkUserCode(userCode)){
-			$("#errorMsg").html("请输入用户名!");
+			$("#loginErrorMsg").html("请输入用户名!");
 			return;
 		}
 		if(!login.checkUserCode(password)){
-			$("#errorMsg").html("请输入密码!");
+			$("#loginErrorMsg").html("请输入密码!");
 			return;
 		}
 		login.submit(userCode, password);
 	});
 
 	$("#userCode,#password").click(function() {
-		$("#errorMsg").html("");
+		$("#loginErrorMsg").html("");
 	});
 	
 	$("#userCode").keydown(function(event){
@@ -28,11 +28,11 @@ $(function() {
 			var userCode = $("#userCode").val();
 			var password = $("#password").val();
 			if(!login.checkUserCode(userCode)){
-				$("#errorMsg").html("请输入用户名!");
+				$("#loginErrorMsg").html("请输入用户名!");
 				return;
 			}
 			if(!login.checkUserCode(password)){
-				$("#errorMsg").html("请输入密码!");
+				$("#loginErrorMsg").html("请输入密码!");
 				return;
 			}
 			login.submit(userCode, password);
@@ -62,9 +62,9 @@ var login = {
 				"password" : password
 			}, function(data) {
 				if (data["success"]) {
-					location.href = "/adminUser/list";
+					location.href = "/login/home";
 				} else {
-					$("#errorMsg").html("用户名或密码错误!");
+					$("#loginErrorMsg").html("用户名或密码错误!");
 					return;
 				}
 			});
