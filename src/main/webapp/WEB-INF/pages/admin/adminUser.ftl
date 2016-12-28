@@ -10,32 +10,32 @@
 
 	<body data-type="product">
 		<div class="am-g tpl-g">
-			<!-- 头部 -->
+			<#-- 头部 -->
 			<#include "/common/header.ftl"/>
-			<!-- 头部结束 -->
+			<#-- 头部结束 -->
 
-			<!-- 风格切换 -->
+			<#-- 风格切换 -->
 			<#include "/common/themeSwitch.ftl"/>
-			<!-- 风格切换结束 -->
+			<#-- 风格切换结束 -->
 
-			<!-- 侧边导航栏 -->
+			<#-- 侧边导航栏 -->
 			<#include "/common/leftSidebar.ftl"/>
-			<!-- 侧边导航栏结束 -->
+			<#-- 侧边导航栏结束 -->
 
-			<!-- 内容区域 -->
+			<#-- 内容区域 -->
 			<div class="tpl-content-wrapper">
 				<div class="container-fluid am-cf">
 					<div class="row">
 						<div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
 							<div class="widget am-cf">
-								<!--当前位置-->
+								<#--当前位置-->
 								<div class="widget-head am-cf">
 									<div class="page-header-heading"><span class="am-icon-user page-header-heading-icon"></span> 产品管理 <small>/ productManage</small></div>
 									<p class="page-header-description">这个是用户管理页. 您可以在此增删改查 cats 后台的用户信息.</p>
 								</div>
-								<!--当前位置结束-->
+								<#--当前位置结束-->
 								<div class="widget-body am-fr">
-									<!--查询条件-->
+									<#--查询条件-->
 									<div>
 										<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 											<div class="am-form-group">
@@ -69,8 +69,8 @@
 											</div>
 										</div>
 									</div>
-									<!--查询条件结束-->
-									<!--表格-->
+									<#--查询条件结束-->
+									<#--表格-->
 									<div class="am-u-sm-12">
 										<table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
 											<thead>
@@ -261,8 +261,8 @@
 											</tbody>
 										</table>
 									</div>
-									<!--表格结束-->
-									<!--分页-->
+									<#--表格结束-->
+									<#--分页-->
 									<div class="am-u-lg-12 am-cf">
 										<div class="am-fr">
 											<ul class="am-pagination tpl-pagination">
@@ -290,7 +290,7 @@
 											</ul>
 										</div>
 									</div>
-									<!--分页结束-->
+									<#--分页结束-->
 								</div>
 							</div>
 
@@ -300,10 +300,9 @@
 				</div>
 			</div>
 			<#-- 内容区域结束 -->
-
 		</div>
 		
-		
+		<#--新增用户弹出框 start-->
 		<div class="am-modal am-modal-no-btn" tabindex="-1" id="addAdminUser">
 			<div class="am-modal-dialog">
 			    <div class="am-modal-hd">
@@ -351,6 +350,7 @@
 			    </div>
 		  	</div>
 		</div>
+		<#--新增用户弹出框 end-->
 	</body>
 
 </html>
