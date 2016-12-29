@@ -33,7 +33,7 @@ public class AdminUserController extends BaseController {
 	
 	/**
 	 * 根据用户姓名,状态和页数分页查询
-	 * @param userName
+	 * @param adminUserName
 	 * @param adminUserStatus
 	 * @param currentPage
 	 * @return
@@ -80,6 +80,24 @@ public class AdminUserController extends BaseController {
 		au.setStatus(aus);
 		adminUserService.insert(au);
 		AjaxResult<AdminUser> result = new AjaxResult<AdminUser>(true, au);
+		return result;
+	}
+	
+	/**
+	 * 检查用户名是否存在
+	 * @param adminUserCode
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/checkByCode", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	public AjaxResult<AdminUser> checkByCode(@RequestParam(value = "adminUserCode", required = true) String adminUserCode){
+		AdminUser au = adminUserService.getByCode(adminUserCode);
+		AjaxResult<AdminUser> result = null;
+		if(au==null){
+			result = new AjaxResult<AdminUser>(true, au);
+		}else{
+			result = new AjaxResult<AdminUser>(false, "该用户已存在!");
+		}
 		return result;
 	}
 }

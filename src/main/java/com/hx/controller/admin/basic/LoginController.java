@@ -64,7 +64,7 @@ public class LoginController extends BaseController {
 				cu.setUserName("管理员");
 				result = new AjaxResult<CurrentUser>(true, cu);
 			}else{
-				AdminUser au = adminUserService.getByUserCode(userCode);
+				AdminUser au = adminUserService.getByCode(userCode);
 				cu.setUserCode(au.getCode());
 				cu.setUserName(au.getName());
 				result = new AjaxResult<CurrentUser>(true, cu);

@@ -10,6 +10,7 @@ $(function(){
 		}
 		location.href="/adminUser/list?adminUserName="+adminUserName+"&adminUserStatus="+adminUserStatus;
 	});
+	
 	/**
 	 * 新增按钮点击事件,后台交互
 	 */
@@ -59,6 +60,14 @@ $(function(){
 	$("#addAdminUserStatus").click(function(){
 		$("#addStatusErrorMsg").text("");
 	});
+	
+	/**
+	 * 失焦后检查用户名是否存在
+	 */
+	$("#addAdminUserCode").blur(function(){
+		$.get("");
+	});
+	
 	
 	/**
 	 * 删除按钮点击事件,弹出提示框

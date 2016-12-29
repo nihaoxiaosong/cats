@@ -1,4 +1,6 @@
 # cats
+初始帐密:admin/admin
+
 项目部署步骤:
 1. 下载安装jdk1.8(其他版本也可以,1.7以上), 配置完后在终端命令java –version能显示java版本信息就OK了
   jdk下载地址: www.oracle.com/technetwork/java/javase/downloads/index.html;
@@ -14,14 +16,14 @@
   3> 配置maven, 先进入maven解压目录, 在conf中打开settings.xml, 新增jar包默认存放地址, 和国内的阿里云镜像, 保存后关闭
     jar包存放目录:
     <localRepository>D:/apache-maven-3.3.9/.m2/repository</localRepository>
-    镜像配置:
+   	 镜像配置:
     <mirror>
         <id>nexus-aliyun</id>
         <mirrorOf>*</mirrorOf>
         <name>Nexus aliyun</name>
         <url>http://maven.aliyun.com/nexus/content/groups/public</url>
     </mirror> 
-    然后在maven - installations中新增自己下载的 maven
-    然后在maven – user settings 中加载 conf 中的 settings 文件
+	然后在maven - installations中新增自己下载的 maven
+	然后在maven - user settings 中加载 conf 中的 settings 文件
 6. 配置启动服务, 在 server 中右键add and remove, 将项目 add 到右边
 7. 右键 server, start or debug

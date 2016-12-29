@@ -19,7 +19,7 @@ public interface AdminUserService {
 	 * @param userCode
 	 * @return
 	 */
-	AdminUser getByUserCode(String userCode);
+	AdminUser getByCode(String userCode);
 	/**
 	 * 根据id 查找
 	 * @param id

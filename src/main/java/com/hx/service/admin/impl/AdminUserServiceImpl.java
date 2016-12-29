@@ -26,7 +26,7 @@ public class AdminUserServiceImpl implements AdminUserService {
 	}
 
 	@Override
-	public AdminUser getByUserCode(String userCode) {
+	public AdminUser getByCode(String userCode) {
 		return adminUserDao.getByUserCode(userCode);
 	}
 

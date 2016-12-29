@@ -79,5 +79,5 @@
 			weekStr+="六";
 			break;
 	}
-	$("#todayDate").text("今天是 "+todayStr+" "+weekStr);
+	$("#todayDate").text(" 今天是 "+todayStr+" "+weekStr);
 </script>
