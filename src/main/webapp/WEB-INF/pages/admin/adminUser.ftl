@@ -30,7 +30,7 @@
 							<div class="widget am-cf">
 								<#--当前位置-->
 								<div class="widget-head am-cf">
-									<div class="page-header-heading"><span class="am-icon-user page-header-heading-icon"></span> 产品管理 <small>/ productManage</small></div>
+									<div class="page-header-heading"><span class="am-icon-user page-header-heading-icon"></span> 后台用户管理 <small>/ adminUser</small></div>
 									<p class="page-header-description">这个是用户管理页. 您可以在此增删改查 cats 后台的用户信息.</p>
 								</div>
 								<#--当前位置结束-->
@@ -42,10 +42,8 @@
 												<div class="am-btn-toolbar">
 													<div class="am-btn-group am-btn-group-xs">
 														<button type="button" class="am-btn am-btn-default am-btn-success" data-am-modal="{target: '#addAdminUser', closeViaDimmer: 0}"><span class="am-icon-plus"></span> 新增</button>
-														<#--
 														<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
 														<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
-														-->
 														<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
 													</div>
 												</div>
@@ -53,19 +51,19 @@
 										</div>
 										<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
 											<div class="am-form-group tpl-table-list-select">
-												<select data-am-selected="{btnSize: 'sm'}">
-													<option value="option1">请选择状态</option>
-													<option value="option2">启用</option>
-													<option value="option3">停用</option>
+												<select data-am-selected="{btnSize: 'sm'}" id="adminUserStatus">
+													<option value="-1">请选择状态</option>
+													<option value="0" <#if adminUserStatus=="0">selected</#if> >启用</option>
+													<option value="1" <#if adminUserStatus=="1">selected</#if>>停用</option>
 												</select>
 											</div>
 										</div>
 										<div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
 											<div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-												<input type="text" class="am-form-field" placeholder="请输入用户姓名">
+												<input type="text" id="adminUserName" class="am-form-field" value="${adminUserName!}" placeholder="请输入姓名">
 												<span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
-          </span>
+													<button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button" id="queryAdminUser"></button>
+												</span>
 											</div>
 										</div>
 									</div>
@@ -84,180 +82,29 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>1</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>启用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>2</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>启用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>3</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>启用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>4</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>启用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>5</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>启用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>6</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>停用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>7</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>停用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>8</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>停用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>9</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>停用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<th><input type="checkbox"/></th>
-													<td>10</td>
-													<td>songjie</td>
-													<td>宋杰</td>
-													<td>停用</td>
-													<td>
-														<div class="tpl-table-black-operation">
-															<a href="javascript:;">
-																<i class="am-icon-pencil"></i> 编辑
-															</a>
-															<a href="javascript:;" class="tpl-table-black-operation-del">
-																<i class="am-icon-trash"></i> 删除
-															</a>
-														</div>
-													</td>
-												</tr>
+											<#if pager?exists && pager.list?exists && pager.list?size &gt; 0>
+												<#list pager.list as adminUser>
+													<tr>
+														<td><input type="checkbox"/></td>
+														<td>${adminUser_index+1}</td>
+														<td>${adminUser.code!}</td>
+														<td>${adminUser.name!}</td>
+														<td <#if adminUser.status.value==1>style="color:red;"</#if> >${adminUser.status.des!}</td>
+														<td>
+															<div class="tpl-table-black-operation">
+																<a href="javascript:;">
+																	<i class="am-icon-pencil"></i> 编辑
+																</a>
+																<a href="javascript:;" class="tpl-table-black-operation-del">
+																	<i class="am-icon-trash"></i> 删除
+																</a>
+															</div>
+														</td>
+													</tr>
+												</#list>												
+											<#else>
+												<tr style="text-align:center;"><td colspan="6">暂无记录,请新增.</td></tr>
+											</#if>
 											</tbody>
 										</table>
 									</div>
@@ -307,7 +154,7 @@
 			<div class="am-modal-dialog">
 			    <div class="am-modal-hd">
 			    	<label>新增用户</label>
-			    	<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+			    	<a href="javascript:void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
 			    </div>
 			    <hr/>
 			    <div class="am-modal-bd">
@@ -315,35 +162,35 @@
 						<div class="am-form-group am-form-group-sm">
 							<span for="" class="am-u-sm-3 am-form-label">编码:</span>
 							<div class="am-u-sm-6">
-								<input type="text" id="" class="am-form-field" placeholder="请输入编码">
+								<input type="text" id="addAdminUserCode" class="am-form-field" placeholder="请输入编码">
 							</div>
-							<span class="am-u-sm-3" style="color:red;">已有相同编码!</span>
+							<span class="am-u-sm-3" style="color:red;" id="addCodeErrorMsg"></span>
 						</div>
 					
 						<div class="am-form-group am-form-group-sm">
 							<span for="" class="am-u-sm-3 am-form-label">姓名:</span>
 							<div class="am-u-sm-6">
-								<input type="text" id="" class="am-form-field" placeholder="请输入姓名">
+								<input type="text" id="addAdminUserName" class="am-form-field" placeholder="请输入姓名">
 							</div>
-							<span class="am-u-sm-3" style="color:red;">姓名不能为空!</span>
+							<span class="am-u-sm-3" style="color:red;" id="addNameErrorMsg"></span>
 						</div>
 					
 						<div class="am-form-group am-form-group-sm">
 							<span for="" class="am-u-sm-3 am-form-label">状态</span>
 							<div class="am-u-sm-6">
-								<select class=" am-input-sm">
-									<option value="option1">请选择状态</option>
-									<option value="option2">启用</option>
-									<option value="option3">停用</option>
+								<select class="am-input-sm" id="addAdminUserStatus">
+									<option value="">请选择状态</option>
+									<option value="0">启用</option>
+									<option value="1">停用</option>
 								</select>
 							</div>
-							<span class="am-u-sm-3" style="color:red;">状态不能为空</span>
+							<span class="am-u-sm-3" style="color:red;" id="addStatusErrorMsg"></span>
 						</div>
 					
 						<div class="am-form-group">
 							<div class="am-u-sm-10 am-u-sm-offset-3">
-								<button type="button" class="am-btn am-btn-default" data-am-modal-close>取消</button>
-								<button type="button" class="am-btn am-btn-primary">保存</button>
+								<button type="button" class="am-btn am-btn-default am-btn-sm" data-am-modal-close>取消</button>
+								<button type="button" class="am-btn am-btn-primary am-btn-sm" id="addAdminUserConfirm">保存</button>
 							</div>
 						</div>
 					</div>
@@ -351,6 +198,8 @@
 		  	</div>
 		</div>
 		<#--新增用户弹出框 end-->
+		<script src="<@s.url '/assets/js/common/common.js'/>"></script>
+		<script src="<@s.url '/assets/js/admin/adminUser.js'/>"></script>
 	</body>
 
 </html>

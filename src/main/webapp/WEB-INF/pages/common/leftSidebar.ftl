@@ -28,7 +28,7 @@
 					</a>
 				</li>
 				<li class="sidebar-nav-link">
-					<a href="#" id="product">
+					<a href="/product/list" id="product">
 						<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 产品管理
 					</a>
 				</li>

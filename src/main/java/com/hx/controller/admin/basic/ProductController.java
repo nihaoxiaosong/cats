@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hx.HXConstants;
 import com.hx.controller.base.BaseController;
 import com.hx.dto.base.AjaxResult;
 import com.hx.entity.admin.Product;
 import com.hx.enums.admin.ProductStatus;
 import com.hx.service.admin.ProductService;
 import com.hx.util.CommonUtils;
+import com.hx.util.CookieUtils;
 
 /**
  * 产品管理
@@ -44,12 +46,13 @@ public class ProductController extends BaseController {
 		if (!StringUtils.isEmpty(productStatus)) {
 			ps = ProductStatus.getByValue(Integer.valueOf(productStatus));
 		}
+		CookieUtils.addCookie(HXConstants.CURRENT_URL_ID, HXConstants.PRODUCT, 0, response);
 		ModelAndView mav = new ModelAndView();
 		List<Product> list = productService.list(productName, ps);
 		mav.addObject("list", list);
 		mav.addObject("productName", productName);
 		mav.addObject("productStatus", productStatus);
-		mav.setViewName("/admin/productManager");
+		mav.setViewName("/admin/product");
 		return mav;
 	}
 

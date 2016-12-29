@@ -19,7 +19,7 @@ public class AdminUserDaoImpl extends BaseDao implements AdminUserDao {
 	public List<AdminUser> list(String userName, AdminUserStatus status, int startIndex, int limit) {
 		Query query = new Query();
 		if (!StringUtils.isEmpty(userName)) {
-			query.addCriteria(new Criteria("userName").regex(userName));
+			query.addCriteria(new Criteria("name").regex(userName));
 		}
 		if (status != null) {
 			query.addCriteria(new Criteria("status").is(status.toString()));
@@ -32,7 +32,7 @@ public class AdminUserDaoImpl extends BaseDao implements AdminUserDao {
 	public int count(String userName, AdminUserStatus status) {
 		Query query = new Query();
 		if (!StringUtils.isEmpty(userName)) {
-			query.addCriteria(new Criteria("userName").regex(userName));
+			query.addCriteria(new Criteria("name").regex(userName));
 		}
 		if (status != null) {
 			query.addCriteria(new Criteria("status").is(status.toString()));
@@ -44,7 +44,7 @@ public class AdminUserDaoImpl extends BaseDao implements AdminUserDao {
 	public AdminUser getByUserCode(String userCode) {
 		Query query = new Query();
 		if (!StringUtils.isEmpty(userCode)) {
-			query.addCriteria(new Criteria("userCode").is(userCode));
+			query.addCriteria(new Criteria("code").is(userCode));
 		}
 		query.addCriteria(new Criteria("status").is(AdminUserStatus.ENABLE));
 		return catsMongoTemplate.findOne(query, AdminUser.class);

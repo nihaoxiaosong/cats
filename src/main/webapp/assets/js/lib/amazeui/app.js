@@ -1,6 +1,13 @@
 $(function() {
-    $('body').attr('class','theme-white');
-
+	// 判断用户是否已有自己选择的模板风格
+	if(storageLoad('SelcetColor')){
+	  $('body').attr('class',storageLoad('SelcetColor').Color)
+	}else{
+	    storageSave(saveSelectColor);
+	    $('body').attr('class','theme-black')
+	}
+    
+	//自动适应屏幕分辨率,小于1024就隐藏左侧导航条
     autoLeftNav();
     $(window).resize(function() {
         autoLeftNav();
@@ -17,7 +24,7 @@ $(function() {
     	// 保存选择项
     	storageSave(saveSelectColor);
     });
-    // 侧边菜单
+    //侧边菜单
     $('.sidebar-nav-sub-title').on('click', function() {
     	$(this).siblings('.sidebar-nav-sub').slideToggle(80)
     	.end()
@@ -25,10 +32,6 @@ $(function() {
     });
     
 });
-
-
-
-
 
 
 // 侧边菜单开关

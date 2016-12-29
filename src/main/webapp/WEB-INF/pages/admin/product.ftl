@@ -5,253 +5,22 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>cats后台产品管理</title>
-		<link rel="import" href="common/js_css.html" />
+		<#include "/common/cssJs.ftl"/>
 	</head>
 
 	<body data-type="product">
 		<div class="am-g tpl-g">
-			<!-- 头部 -->
-			<header>
-				<!-- logo -->
-				<div class="am-fl tpl-header-logo">
-					<a href="javascript:;"><img src="../assets/img/cats_header.png" alt=""></a>
-				</div>
-				<!-- 右侧内容 -->
-				<div class="tpl-header-fluid">
-					<!-- 侧边切换 -->
-					<div class="am-fl tpl-header-switch-button am-icon-list">
-						<span>
+			<#-- 头部 -->
+			<#include "/common/header.ftl"/>
+			<#-- 头部结束 -->
 
-    </span>
-					</div>
-					<!-- 搜索 -->
-					<div class="am-fl tpl-header-search">
-						<form class="tpl-header-search-form" action="javascript:;">
-							<button class="tpl-header-search-btn am-icon-search"></button>
-							<input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
-						</form>
-					</div>
-					<!-- 其它功能-->
-					<div class="am-fr tpl-header-navbar">
-						<ul>
+			<#-- 风格切换 -->
+			<#include "/common/themeSwitch.ftl"/>
+			<#-- 风格切换结束 -->
 
-							<!-- 欢迎语 -->
-							<li class="am-text-sm tpl-header-navbar-welcome">
-								<a href="javascript:void(0);">
-									<span class="am-icon-user"> 欢迎你,宋杰</span>
-								</a>
-							</li>
-
-							<!-- 日期 -->
-							<li class="am-text-sm tpl-header-navbar-welcome">
-								<a href="javascript:void(0);">
-									<span class="am-icon-calendar"> 今天是 2016-12-17 星期二</span>
-								</a>
-							</li>
-
-							<!-- 修改密码 -->
-							<li class="am-text-sm tpl-header-navbar-welcome">
-								<a href="javascript:void(0);">
-									<span class="am-icon-key"> 修改密码</span>
-								</a>
-							</li>
-
-							<!-- 退出 -->
-							<li class="am-text-sm">
-								<a href="javascript:void(0);">
-									<span class="am-icon-sign-out"> 退出</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-			</header>
-			<!-- 头部结束 -->
-
-			<!-- 风格切换 -->
-			<div class="tpl-skiner">
-				<div class="tpl-skiner-toggle am-icon-cog">
-				</div>
-				<div class="tpl-skiner-content">
-					<div class="tpl-skiner-content-title">
-						选择主题
-					</div>
-					<div class="tpl-skiner-content-bar">
-						<span class="skiner-color skiner-white" data-color="theme-white"></span>
-						<span class="skiner-color skiner-black" data-color="theme-black"></span>
-					</div>
-				</div>
-			</div>
-			<!-- 风格切换结束 -->
-
-			<!-- 侧边导航栏 -->
-			<div class="left-sidebar">
-				<!-- 用户信息 -->
-				<div class="tpl-sidebar-user-panel">
-					<div class="tpl-user-panel-slide-toggleable">
-						<div class="tpl-user-panel-profile-picture" align="center" style="margin-left: 42px;">
-							<img src="../assets/img/head.jpg" alt="">
-						</div>
-					</div>
-				</div>
-
-				<!-- 菜单 -->
-				<ul class="sidebar-nav">
-					<li class="sidebar-nav-heading">Menu <span class="sidebar-nav-heading-info"> 菜单</span></li>
-					<li class="sidebar-nav-link">
-						<a href="index.html" class="active">
-							<i class="am-icon-home sidebar-nav-link-logo"></i> 首页
-						</a>
-					</li>
-					<li class="sidebar-nav-link">
-						<a href="javascript:;" class="sidebar-nav-sub-title">
-							<i class="am-icon-cogs sidebar-nav-link-logo"></i> 基础数据
-							<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-						</a>
-						<ul class="sidebar-nav sidebar-nav-sub">
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户管理
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 产品管理
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 学校管理
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 工作室经理管理
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 老师管理
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 学生管理
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 权限管理
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 公告列表
-								</a>
-							</li>
-						</ul>
-					</li>
-
-					<li class="sidebar-nav-link">
-						<a href="javascript:;" class="sidebar-nav-sub-title">
-							<i class="am-icon-black-tie sidebar-nav-link-logo"></i> 人才选拔测评管理
-							<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-						</a>
-						<ul class="sidebar-nav sidebar-nav-sub displayblock">
-							<li class="sidebar-nav-link">
-								<a href="table-list.html" class="active">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> CMAC合格标准
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 选拔合格标准
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 成绩查询
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 选拔结果查询
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 课程管理查询
-								</a>
-							</li>
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 政府网站管理
-								</a>
-							</li>
-						</ul>
-					</li>
-
-					<li class="sidebar-nav-link">
-						<a href="javascript:;" class="sidebar-nav-sub-title">
-							<i class="am-icon-desktop sidebar-nav-link-logo"></i> 工作室管理
-							<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-						</a>
-						<ul class="sidebar-nav sidebar-nav-sub">
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 任务类型设置
-								</a>
-							</li>
-
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 评价分数设置
-								</a>
-							</li>
-						</ul>
-					</li>
-
-					<li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
-					<li class="sidebar-nav-link">
-						<a href="javascript:;" class="sidebar-nav-sub-title">
-							<i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
-							<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-						</a>
-						<ul class="sidebar-nav sidebar-nav-sub">
-							<li class="sidebar-nav-link">
-								<a href="table-list.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
-								</a>
-							</li>
-
-							<li class="sidebar-nav-link">
-								<a href="table-list-img.html">
-									<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="sidebar-nav-link">
-						<a href="sign-up.html">
-							<i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
-							<span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
-						</a>
-					</li>
-					<li class="sidebar-nav-link">
-						<a href="login.html">
-							<i class="am-icon-key sidebar-nav-link-logo"></i> 登录
-						</a>
-					</li>
-					<li class="sidebar-nav-link">
-						<a href="404.html">
-							<i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
-						</a>
-					</li>
-
-				</ul>
-			</div>
-			<!-- 侧边导航栏结束 -->
+			<#-- 侧边导航栏 -->
+			<#include "/common/leftSidebar.ftl"/>
+			<#-- 侧边导航栏结束 -->
 
 			<!-- 内容区域 -->
 			<div class="tpl-content-wrapper">
@@ -261,8 +30,8 @@
 							<div class="widget am-cf">
 								<!--当前位置-->
 								<div class="widget-head am-cf">
-									<div class="page-header-heading"><span class="am-icon-product-hunt page-header-heading-icon"></span> 产品管理 <small>/ productManage</small></div>
-									<p class="page-header-description">这个是产品管理页.您可以再次增删改查 cats 的产品信息.</p>
+									<div class="page-header-heading"><span class="am-icon-product-hunt page-header-heading-icon"></span> 产品管理 <small>/ product</small></div>
+									<p class="page-header-description">这个是产品管理页. 您可以再次增删改查 cats 的产品信息.</p>
 								</div>
 								<!--当前位置结束-->
 								<div class="widget-body am-fr">

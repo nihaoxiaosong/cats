@@ -29,11 +29,25 @@
 					<div class="row">
 						<div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
 							<div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 首页 <small>/ homePage</small></div>
-							<p class="page-header-description">这是首页.您可以点击以下快捷入口进入相应功能界面.</p>
+							<p class="page-header-description">这是首页. 没什么好放的, 随便欣赏几张图片吧.</p>
 						</div>
 					</div>
 				</div>
-
+				<div class="row-content am-cf">
+					<div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
+						<ul class="am-slides">
+							<li><img src="http://s.amazeui.org/media/i/demos/bing-4.jpg" /></li>
+							<li><img src="http://s.amazeui.org/media/i/demos/bing-3.jpg" /></li>
+							<li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>
+							<li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
+							<li><img src="http://s.amazeui.org/media/i/demos/pure-4.jpg" /></li>
+							<li><img src="http://s.amazeui.org/media/i/demos/pure-3.jpg" /></li>
+							<li><img src="http://s.amazeui.org/media/i/demos/pure-2.jpg" /></li>
+							<li><img src="http://s.amazeui.org/media/i/demos/pure-1.jpg" /></li>
+						</ul>
+					</div>
+				</div>
+				<#--
 				<div class="row-content am-cf">
 					<div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
 						<div class="widget widget-primary am-cf">
@@ -100,7 +114,7 @@
 
 				</div>
 
-					<#--
+					
 				<div class="row-content am-cf">
 					<div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
 						<div class="widget widget-primary am-cf">
